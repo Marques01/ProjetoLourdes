@@ -1,0 +1,65 @@
+create database vnslourdes
+default character set utf8
+default collate utf8_general_ci;
+
+drop table Produtos; 
+
+create table Produtos( 
+idprodutos int primary key,
+chapa90 double,
+chapa75 double,
+washprimer double,
+catalizador double,
+chapelco double,
+m60 double,
+cidadeRJ double,
+internorte double,
+nordem double,
+nordemg double,
+nordemt double,
+papel double,
+capsula double,
+seta double,
+cadeirante double,
+faixarefletiva double,
+peixinho double,
+duplaface double,
+fitafina double,
+fitagrossa double,
+trincob double,
+trincot double,
+peixao double,
+dobradicaLD double,
+dobradicaLE double,
+puxador double,
+massapoliester double,
+massafibra double,
+tintaverde double,
+catalisadormassa double,
+tintapreta double,
+redutor double,
+cidadeRJgrade double,
+disco80 double
+)default charset = utf8;
+
+drop table produtos;
+create table gravar_avaria
+(
+id int,
+dia datetime,
+nordem text,
+modelo varchar(20),
+avaria text
+)default charset = utf8;
+
+drop table gravar_avaria;
+
+select * from produtos;
+
+
+
+
+
+
+
+
