@@ -1,0 +1,120 @@
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Users\Cleiton\Desktop\Projeto atualizado\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+\\192.168.1.9\Home\Auditoria1\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+\\192.168.1.9\Home\Auditoria1\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+\\192.168.1.9\Home\Auditoria1\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Users\cleit\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+C:\Users\cleit\Desktop\Projeto atualizado (Atual)\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Users\Cleiton\Desktop\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+E:\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\Empresa2.frmPesquisas.resources
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Google.Protobuf.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\MySql.Data.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Renci.SshNet.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\Zstandard.Net.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\System.Buffers.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\System.Memory.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\MySql.Data.xml
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CopyComplete
+C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
