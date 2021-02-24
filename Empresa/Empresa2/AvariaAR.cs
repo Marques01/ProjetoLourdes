@@ -11,8 +11,14 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms.VisualStyles;
 using System.IO;
+using MySql;
+using MySqlX;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 namespace Empresa2
 {
+
+  
     public partial class AvariaAR : Form
     {
         string av = "O valor total da avaria foi de R$:";
@@ -21,24 +27,24 @@ namespace Empresa2
         Calcular1722 c1722 = new Calcular1722();
         CalcularArCondiconado car = new CalcularArCondiconado();
         CalcularDianteira_Traseira cdt = new CalcularDianteira_Traseira();
-        Calcular1519 c1519 = new Calcular1519();        
+        Calcular1519 c1519 = new Calcular1519();
+        Produtos P = new Produtos();
 
-        OpenFileDialog openF = new OpenFileDialog();
-
+        OpenFileDialog openF = new OpenFileDialog();              
+    
 
         public AvariaAR()
         {
 
-            InitializeComponent();
+            InitializeComponent();                 
 
         }
 
         private void button1_Click(object sender, EventArgs e) // Botão de nova avaria
         {
-
-        }
-
-
+            
+        }  
+               
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
@@ -1097,11 +1103,108 @@ namespace Empresa2
 
         private void AvariaAR_Load(object sender, EventArgs e)
         {
+                          
             // TODO: esta linha de código carrega dados na tabela 'vnslourdesDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.vnslourdesDataSet.produtos);
             // TODO: esta linha de código carrega dados na tabela 'vnslourdesDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
-            this.produtosTableAdapter.Fill(this.vnslourdesDataSet.produtos);                       
-            
+            this.produtosTableAdapter.Fill(this.vnslourdesDataSet.produtos);
+
+
+            MySqlConnection mysqlC = new MySqlConnection("Server = localhost; Database = vnslourdes; Uid = root; Pwd = binario0101");
+            MySqlCommand cmdmysql = new MySqlCommand();
+            MySqlDataReader reader;
+
+            try
+            {
+                cmdmysql.Connection = mysqlC;
+
+                mysqlC.Open();
+
+            }
+            catch
+            {
+
+                MessageBox.Show("Não foi possível conectar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            try
+            {
+                if(pnlProdutos.Visible.Equals(true))
+                {
+                    P.chapa90 = Convert.ToDouble(chapa90TextBox.Text);
+
+                    P.chapa75 = Convert.ToDouble(chapa75TextBox.Text);
+
+                    P.washprimer = Convert.ToDouble(washprimerTextBox.Text);
+
+                    P.catalizador = Convert.ToDouble(catalizadorTextBox.Text);
+
+                    P.chapelco = Convert.ToDouble(chapelcoTextBox.Text);
+
+                    P.m60 = Convert.ToDouble(m60TextBox.Text);
+
+                    P.cidadeRJ = Convert.ToDouble(cidadeRJTextBox.Text);
+
+                    P.internorte = Convert.ToDouble(internorteTextBox.Text);
+
+                    P.nordem = Convert.ToDouble(nordemTextBox.Text);
+
+                    P.nordemg = Convert.ToDouble(nordemgTextBox.Text);
+
+                    P.nordemt = Convert.ToDouble(nordemtTextBox.Text);
+
+                    P.papel = Convert.ToDouble(papelTextBox.Text);
+
+                    P.capsula = Convert.ToDouble(capsulaTextBox.Text);
+
+                    P.seta = Convert.ToDouble(setaTextBox.Text);
+
+                    P.cadeirante = Convert.ToDouble(cadeiranteTextBox.Text);
+
+                    P.faixarefletiva = Convert.ToDouble(faixarefletivaTextBox.Text);
+
+                    P.peixinho = Convert.ToDouble(peixinhoTextBox.Text);
+
+                    P.duplaface = Convert.ToDouble(duplafaceTextBox.Text);
+
+                    P.fitafina = Convert.ToDouble(fitafinaTextBox.Text);
+
+                    P.fitagrossa = Convert.ToDouble(fitagrossaTextBox.Text);
+
+                    P.trincob = Convert.ToDouble(trincobTextBox.Text);
+
+                    P.trincot = Convert.ToDouble(trincotTextBox.Text);
+
+                    P.peixao = Convert.ToDouble(peixaoTextBox.Text);
+
+                    P.dobradicaLD = Convert.ToDouble(dobradicaLDTextBox.Text);
+
+                    P.dobradicaLE = Convert.ToDouble(dobradicaLETextBox.Text);
+
+                    P.puxador = Convert.ToDouble(puxadorTextBox.Text);
+
+                    P.massapoliester = Convert.ToDouble(massapoliesterTextBox.Text);
+
+                    P.massafibra = Convert.ToDouble(massafibraTextBox.Text);
+
+                    P.tintaverde = Convert.ToDouble(tintaverdeTextBox.Text);
+
+                    P.redutor = Convert.ToDouble(redutorTextBox.Text);
+
+                    P.cidadeRJgrade = Convert.ToDouble(cidadeRJgradeTextBox.Text);
+
+                    P.disco80 = Convert.ToDouble(disco80TextBox.Text);
+
+                    MessageBox.Show("Conectado com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível carregar os valores dos produtos", "Error #00001", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+                
+            }
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -1822,6 +1925,17 @@ namespace Empresa2
             {
                 checkCP.Enabled = true; // Senão o check de carroceria pintura fica habilitado 
             }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            MessageBox.Show(P.chapa90.ToString());
+            
+        }
+
+        private void AvariaAR_Activated(object sender, EventArgs e)
+        {
+            
         }
     }
 }
