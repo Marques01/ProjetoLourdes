@@ -1937,6 +1937,11 @@ namespace Empresa2
         {
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("" + Math.Round(c1722.total_check1_1722(), 2));
+        }
     }
 }
 

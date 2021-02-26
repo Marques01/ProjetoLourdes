@@ -181,6 +181,7 @@
             this.chapa90TextBox = new System.Windows.Forms.TextBox();
             this.produtosTableAdapter = new Empresa2.vnslourdesDataSetTableAdapters.produtosTableAdapter();
             this.tableAdapterManager = new Empresa2.vnslourdesDataSetTableAdapters.TableAdapterManager();
+            this.button2 = new System.Windows.Forms.Button();
             chapa90Label = new System.Windows.Forms.Label();
             chapa75Label = new System.Windows.Forms.Label();
             washprimerLabel = new System.Windows.Forms.Label();
@@ -1707,7 +1708,7 @@
             this.pnlProdutos.Controls.Add(this.chapa90TextBox);
             this.pnlProdutos.Location = new System.Drawing.Point(109, 50);
             this.pnlProdutos.Name = "pnlProdutos";
-            this.pnlProdutos.Size = new System.Drawing.Size(772, 635);
+            this.pnlProdutos.Size = new System.Drawing.Size(683, 338);
             this.pnlProdutos.TabIndex = 123;
             this.pnlProdutos.Visible = false;
             // 
@@ -2033,6 +2034,16 @@
             this.tableAdapterManager.produtosTableAdapter = this.produtosTableAdapter;
             this.tableAdapterManager.UpdateOrder = Empresa2.vnslourdesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(8, 537);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 124;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AvariaAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2041,6 +2052,7 @@
             this.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(948, 742);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pnlProdutos);
             this.Controls.Add(this.btnCalcularAR);
             this.Controls.Add(this.btnCalcular1722);
@@ -2204,5 +2216,6 @@
         public System.Windows.Forms.TextBox trincobTextBox;
         public System.Windows.Forms.TextBox fitagrossaTextBox;
         public System.Windows.Forms.TextBox fitafinaTextBox;
+        private System.Windows.Forms.Button button2;
     }
 }
