@@ -79,8 +79,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCalcularAR = new System.Windows.Forms.Button();
-            this.btnCalcular1722 = new System.Windows.Forms.Button();
             this.pnlCheckFrente = new System.Windows.Forms.Panel();
             this.check4Frente = new System.Windows.Forms.CheckBox();
             this.check3Frente = new System.Windows.Forms.CheckBox();
@@ -96,7 +94,6 @@
             this.rbTraseira = new System.Windows.Forms.RadioButton();
             this.checkP = new System.Windows.Forms.CheckBox();
             this.checkCP = new System.Windows.Forms.CheckBox();
-            this.btnCalcular = new System.Windows.Forms.Button();
             this.rbDianteira = new System.Windows.Forms.RadioButton();
             this.rbLE = new System.Windows.Forms.RadioButton();
             this.rbLD = new System.Windows.Forms.RadioButton();
@@ -140,46 +137,50 @@
             this.check2LE = new System.Windows.Forms.CheckBox();
             this.check1LE = new System.Windows.Forms.CheckBox();
             this.pnlProdutos = new System.Windows.Forms.Panel();
-            this.vnslourdesDataSet = new Empresa2.vnslourdesDataSet();
+            this.btnTeste = new System.Windows.Forms.Button();
+            this.disco80TextBox = new System.Windows.Forms.TextBox();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vnslourdesDataSet = new Empresa2.vnslourdesDataSet();
+            this.cidadeRJgradeTextBox = new System.Windows.Forms.TextBox();
+            this.redutorTextBox = new System.Windows.Forms.TextBox();
+            this.tintapretaTextBox = new System.Windows.Forms.TextBox();
+            this.catalisadormassaTextBox = new System.Windows.Forms.TextBox();
+            this.tintaverdeTextBox = new System.Windows.Forms.TextBox();
+            this.massafibraTextBox = new System.Windows.Forms.TextBox();
+            this.massapoliesterTextBox = new System.Windows.Forms.TextBox();
+            this.puxadorTextBox = new System.Windows.Forms.TextBox();
+            this.dobradicaLETextBox = new System.Windows.Forms.TextBox();
+            this.dobradicaLDTextBox = new System.Windows.Forms.TextBox();
+            this.peixaoTextBox = new System.Windows.Forms.TextBox();
+            this.trincotTextBox = new System.Windows.Forms.TextBox();
+            this.trincobTextBox = new System.Windows.Forms.TextBox();
+            this.fitagrossaTextBox = new System.Windows.Forms.TextBox();
+            this.fitafinaTextBox = new System.Windows.Forms.TextBox();
+            this.duplafaceTextBox = new System.Windows.Forms.TextBox();
+            this.peixinhoTextBox = new System.Windows.Forms.TextBox();
+            this.faixarefletivaTextBox = new System.Windows.Forms.TextBox();
+            this.cadeiranteTextBox = new System.Windows.Forms.TextBox();
+            this.setaTextBox = new System.Windows.Forms.TextBox();
+            this.btnCancelarValores = new System.Windows.Forms.Button();
+            this.capsulaTextBox = new System.Windows.Forms.TextBox();
+            this.papelTextBox = new System.Windows.Forms.TextBox();
+            this.nordemtTextBox = new System.Windows.Forms.TextBox();
+            this.nordemgTextBox = new System.Windows.Forms.TextBox();
+            this.nordemTextBox = new System.Windows.Forms.TextBox();
+            this.internorteTextBox = new System.Windows.Forms.TextBox();
+            this.cidadeRJTextBox = new System.Windows.Forms.TextBox();
+            this.m60TextBox = new System.Windows.Forms.TextBox();
+            this.chapelcoTextBox = new System.Windows.Forms.TextBox();
+            this.btnAlterarValores = new System.Windows.Forms.Button();
+            this.catalizadorTextBox = new System.Windows.Forms.TextBox();
+            this.washprimerTextBox = new System.Windows.Forms.TextBox();
+            this.chapa75TextBox = new System.Windows.Forms.TextBox();
+            this.chapa90TextBox = new System.Windows.Forms.TextBox();
             this.produtosTableAdapter = new Empresa2.vnslourdesDataSetTableAdapters.produtosTableAdapter();
             this.tableAdapterManager = new Empresa2.vnslourdesDataSetTableAdapters.TableAdapterManager();
-            this.chapa90TextBox = new System.Windows.Forms.TextBox();
-            this.chapa75TextBox = new System.Windows.Forms.TextBox();
-            this.washprimerTextBox = new System.Windows.Forms.TextBox();
-            this.catalizadorTextBox = new System.Windows.Forms.TextBox();
-            this.btnAlterarValores = new System.Windows.Forms.Button();
-            this.chapelcoTextBox = new System.Windows.Forms.TextBox();
-            this.m60TextBox = new System.Windows.Forms.TextBox();
-            this.cidadeRJTextBox = new System.Windows.Forms.TextBox();
-            this.internorteTextBox = new System.Windows.Forms.TextBox();
-            this.nordemTextBox = new System.Windows.Forms.TextBox();
-            this.nordemgTextBox = new System.Windows.Forms.TextBox();
-            this.nordemtTextBox = new System.Windows.Forms.TextBox();
-            this.papelTextBox = new System.Windows.Forms.TextBox();
-            this.capsulaTextBox = new System.Windows.Forms.TextBox();
-            this.btnCancelarValores = new System.Windows.Forms.Button();
-            this.setaTextBox = new System.Windows.Forms.TextBox();
-            this.cadeiranteTextBox = new System.Windows.Forms.TextBox();
-            this.faixarefletivaTextBox = new System.Windows.Forms.TextBox();
-            this.peixinhoTextBox = new System.Windows.Forms.TextBox();
-            this.duplafaceTextBox = new System.Windows.Forms.TextBox();
-            this.fitafinaTextBox = new System.Windows.Forms.TextBox();
-            this.fitagrossaTextBox = new System.Windows.Forms.TextBox();
-            this.trincobTextBox = new System.Windows.Forms.TextBox();
-            this.trincotTextBox = new System.Windows.Forms.TextBox();
-            this.peixaoTextBox = new System.Windows.Forms.TextBox();
-            this.dobradicaLDTextBox = new System.Windows.Forms.TextBox();
-            this.dobradicaLETextBox = new System.Windows.Forms.TextBox();
-            this.puxadorTextBox = new System.Windows.Forms.TextBox();
-            this.massapoliesterTextBox = new System.Windows.Forms.TextBox();
-            this.massafibraTextBox = new System.Windows.Forms.TextBox();
-            this.tintaverdeTextBox = new System.Windows.Forms.TextBox();
-            this.catalisadormassaTextBox = new System.Windows.Forms.TextBox();
-            this.tintapretaTextBox = new System.Windows.Forms.TextBox();
-            this.redutorTextBox = new System.Windows.Forms.TextBox();
-            this.cidadeRJgradeTextBox = new System.Windows.Forms.TextBox();
-            this.disco80TextBox = new System.Windows.Forms.TextBox();
+            this.btnCalcularAR = new System.Windows.Forms.Button();
+            this.btnCalcular1519 = new System.Windows.Forms.Button();
+            this.btnCalcular1722 = new System.Windows.Forms.Button();
             chapa90Label = new System.Windows.Forms.Label();
             chapa75Label = new System.Windows.Forms.Label();
             washprimerLabel = new System.Windows.Forms.Label();
@@ -220,9 +221,349 @@
             this.pnlCheckLD.SuspendLayout();
             this.pnlCheckLE.SuspendLayout();
             this.pnlProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vnslourdesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnslourdesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // chapa90Label
+            // 
+            chapa90Label.AutoSize = true;
+            chapa90Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chapa90Label.Location = new System.Drawing.Point(6, 29);
+            chapa90Label.Name = "chapa90Label";
+            chapa90Label.Size = new System.Drawing.Size(65, 16);
+            chapa90Label.TabIndex = 0;
+            chapa90Label.Text = "Chapa 90";
+            // 
+            // chapa75Label
+            // 
+            chapa75Label.AutoSize = true;
+            chapa75Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chapa75Label.Location = new System.Drawing.Point(6, 64);
+            chapa75Label.Name = "chapa75Label";
+            chapa75Label.Size = new System.Drawing.Size(65, 16);
+            chapa75Label.TabIndex = 2;
+            chapa75Label.Text = "Chapa 75";
+            // 
+            // washprimerLabel
+            // 
+            washprimerLabel.AutoSize = true;
+            washprimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            washprimerLabel.Location = new System.Drawing.Point(6, 102);
+            washprimerLabel.Name = "washprimerLabel";
+            washprimerLabel.Size = new System.Drawing.Size(85, 16);
+            washprimerLabel.TabIndex = 4;
+            washprimerLabel.Text = "Wash Primer";
+            // 
+            // catalizadorLabel
+            // 
+            catalizadorLabel.AutoSize = true;
+            catalizadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            catalizadorLabel.Location = new System.Drawing.Point(6, 134);
+            catalizadorLabel.Name = "catalizadorLabel";
+            catalizadorLabel.Size = new System.Drawing.Size(76, 16);
+            catalizadorLabel.TabIndex = 6;
+            catalizadorLabel.Text = "Catalizador";
+            // 
+            // chapelcoLabel
+            // 
+            chapelcoLabel.AutoSize = true;
+            chapelcoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chapelcoLabel.Location = new System.Drawing.Point(6, 174);
+            chapelcoLabel.Name = "chapelcoLabel";
+            chapelcoLabel.Size = new System.Drawing.Size(66, 16);
+            chapelcoLabel.TabIndex = 9;
+            chapelcoLabel.Text = "Chapelco";
+            // 
+            // m60Label
+            // 
+            m60Label.AutoSize = true;
+            m60Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            m60Label.Location = new System.Drawing.Point(6, 211);
+            m60Label.Name = "m60Label";
+            m60Label.Size = new System.Drawing.Size(33, 16);
+            m60Label.TabIndex = 11;
+            m60Label.Text = "M60";
+            // 
+            // cidadeRJLabel
+            // 
+            cidadeRJLabel.AutoSize = true;
+            cidadeRJLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cidadeRJLabel.Location = new System.Drawing.Point(6, 248);
+            cidadeRJLabel.Name = "cidadeRJLabel";
+            cidadeRJLabel.Size = new System.Drawing.Size(72, 16);
+            cidadeRJLabel.TabIndex = 13;
+            cidadeRJLabel.Text = "Cidade RJ";
+            // 
+            // internorteLabel
+            // 
+            internorteLabel.AutoSize = true;
+            internorteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            internorteLabel.Location = new System.Drawing.Point(6, 290);
+            internorteLabel.Name = "internorteLabel";
+            internorteLabel.Size = new System.Drawing.Size(63, 16);
+            internorteLabel.TabIndex = 15;
+            internorteLabel.Text = "Internorte";
+            // 
+            // nordemLabel
+            // 
+            nordemLabel.AutoSize = true;
+            nordemLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nordemLabel.Location = new System.Drawing.Point(6, 328);
+            nordemLabel.Name = "nordemLabel";
+            nordemLabel.Size = new System.Drawing.Size(67, 16);
+            nordemLabel.TabIndex = 17;
+            nordemLabel.Text = "Nº Ordem";
+            // 
+            // nordemgLabel
+            // 
+            nordemgLabel.AutoSize = true;
+            nordemgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nordemgLabel.Location = new System.Drawing.Point(6, 359);
+            nordemgLabel.Name = "nordemgLabel";
+            nordemgLabel.Size = new System.Drawing.Size(108, 16);
+            nordemgLabel.TabIndex = 19;
+            nordemgLabel.Text = "Nº Ordem Grade";
+            // 
+            // nordemtLabel
+            // 
+            nordemtLabel.AutoSize = true;
+            nordemtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nordemtLabel.Location = new System.Drawing.Point(6, 399);
+            nordemtLabel.Name = "nordemtLabel";
+            nordemtLabel.Size = new System.Drawing.Size(80, 16);
+            nordemtLabel.TabIndex = 21;
+            nordemtLabel.Text = "N º Traseiro";
+            // 
+            // papelLabel
+            // 
+            papelLabel.AutoSize = true;
+            papelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            papelLabel.Location = new System.Drawing.Point(6, 434);
+            papelLabel.Name = "papelLabel";
+            papelLabel.Size = new System.Drawing.Size(44, 16);
+            papelLabel.TabIndex = 23;
+            papelLabel.Text = "Papel";
+            // 
+            // capsulaLabel
+            // 
+            capsulaLabel.AutoSize = true;
+            capsulaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            capsulaLabel.Location = new System.Drawing.Point(6, 473);
+            capsulaLabel.Name = "capsulaLabel";
+            capsulaLabel.Size = new System.Drawing.Size(58, 16);
+            capsulaLabel.TabIndex = 25;
+            capsulaLabel.Text = "Capsula";
+            // 
+            // setaLabel
+            // 
+            setaLabel.AutoSize = true;
+            setaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            setaLabel.Location = new System.Drawing.Point(6, 516);
+            setaLabel.Name = "setaLabel";
+            setaLabel.Size = new System.Drawing.Size(80, 16);
+            setaLabel.TabIndex = 28;
+            setaLabel.Text = "Seta Lateral";
+            // 
+            // cadeiranteLabel
+            // 
+            cadeiranteLabel.AutoSize = true;
+            cadeiranteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cadeiranteLabel.Location = new System.Drawing.Point(6, 555);
+            cadeiranteLabel.Name = "cadeiranteLabel";
+            cadeiranteLabel.Size = new System.Drawing.Size(74, 16);
+            cadeiranteLabel.TabIndex = 30;
+            cadeiranteLabel.Text = "Cadeirante";
+            // 
+            // faixarefletivaLabel
+            // 
+            faixarefletivaLabel.AutoSize = true;
+            faixarefletivaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            faixarefletivaLabel.Location = new System.Drawing.Point(9, 592);
+            faixarefletivaLabel.Name = "faixarefletivaLabel";
+            faixarefletivaLabel.Size = new System.Drawing.Size(97, 16);
+            faixarefletivaLabel.TabIndex = 32;
+            faixarefletivaLabel.Text = "Faixa Refletiva";
+            // 
+            // peixinhoLabel
+            // 
+            peixinhoLabel.AutoSize = true;
+            peixinhoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            peixinhoLabel.Location = new System.Drawing.Point(6, 626);
+            peixinhoLabel.Name = "peixinhoLabel";
+            peixinhoLabel.Size = new System.Drawing.Size(59, 16);
+            peixinhoLabel.TabIndex = 34;
+            peixinhoLabel.Text = "Peixinho";
+            // 
+            // duplafaceLabel
+            // 
+            duplafaceLabel.AutoSize = true;
+            duplafaceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            duplafaceLabel.Location = new System.Drawing.Point(9, 669);
+            duplafaceLabel.Name = "duplafaceLabel";
+            duplafaceLabel.Size = new System.Drawing.Size(103, 16);
+            duplafaceLabel.TabIndex = 36;
+            duplafaceLabel.Text = "Fita Dupla Face";
+            // 
+            // fitafinaLabel
+            // 
+            fitafinaLabel.AutoSize = true;
+            fitafinaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fitafinaLabel.Location = new System.Drawing.Point(355, 26);
+            fitafinaLabel.Name = "fitafinaLabel";
+            fitafinaLabel.Size = new System.Drawing.Size(59, 16);
+            fitafinaLabel.TabIndex = 38;
+            fitafinaLabel.Text = "Fita Fina";
+            // 
+            // fitagrossaLabel
+            // 
+            fitagrossaLabel.AutoSize = true;
+            fitagrossaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fitagrossaLabel.Location = new System.Drawing.Point(355, 58);
+            fitagrossaLabel.Name = "fitagrossaLabel";
+            fitagrossaLabel.Size = new System.Drawing.Size(77, 16);
+            fitagrossaLabel.TabIndex = 40;
+            fitagrossaLabel.Text = "Fita Grossa";
+            // 
+            // trincobLabel
+            // 
+            trincobLabel.AutoSize = true;
+            trincobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            trincobLabel.Location = new System.Drawing.Point(298, 96);
+            trincobLabel.Name = "trincobLabel";
+            trincobLabel.Size = new System.Drawing.Size(139, 16);
+            trincobLabel.TabIndex = 42;
+            trincobLabel.Text = "Trinco Tampa Bateria";
+            // 
+            // trincotLabel
+            // 
+            trincotLabel.AutoSize = true;
+            trincotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            trincotLabel.Location = new System.Drawing.Point(299, 132);
+            trincotLabel.Name = "trincotLabel";
+            trincotLabel.Size = new System.Drawing.Size(143, 16);
+            trincotLabel.TabIndex = 44;
+            trincotLabel.Text = "Trinco Tampa Tanque";
+            // 
+            // peixaoLabel
+            // 
+            peixaoLabel.AutoSize = true;
+            peixaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            peixaoLabel.Location = new System.Drawing.Point(358, 171);
+            peixaoLabel.Name = "peixaoLabel";
+            peixaoLabel.Size = new System.Drawing.Size(50, 16);
+            peixaoLabel.TabIndex = 46;
+            peixaoLabel.Text = "Peixão";
+            // 
+            // dobradicaLDLabel
+            // 
+            dobradicaLDLabel.AutoSize = true;
+            dobradicaLDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dobradicaLDLabel.Location = new System.Drawing.Point(298, 209);
+            dobradicaLDLabel.Name = "dobradicaLDLabel";
+            dobradicaLDLabel.Size = new System.Drawing.Size(148, 16);
+            dobradicaLDLabel.TabIndex = 48;
+            dobradicaLDLabel.Text = "Dobradiça Lado Direito";
+            // 
+            // dobradicaLELabel
+            // 
+            dobradicaLELabel.AutoSize = true;
+            dobradicaLELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dobradicaLELabel.Location = new System.Drawing.Point(289, 245);
+            dobradicaLELabel.Name = "dobradicaLELabel";
+            dobradicaLELabel.Size = new System.Drawing.Size(168, 16);
+            dobradicaLELabel.TabIndex = 50;
+            dobradicaLELabel.Text = "Dobradiça Lado Esquerdo";
+            // 
+            // puxadorLabel
+            // 
+            puxadorLabel.AutoSize = true;
+            puxadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            puxadorLabel.Location = new System.Drawing.Point(336, 284);
+            puxadorLabel.Name = "puxadorLabel";
+            puxadorLabel.Size = new System.Drawing.Size(101, 16);
+            puxadorLabel.TabIndex = 52;
+            puxadorLabel.Text = "Puxador Chapa";
+            // 
+            // massapoliesterLabel
+            // 
+            massapoliesterLabel.AutoSize = true;
+            massapoliesterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            massapoliesterLabel.Location = new System.Drawing.Point(336, 326);
+            massapoliesterLabel.Name = "massapoliesterLabel";
+            massapoliesterLabel.Size = new System.Drawing.Size(105, 16);
+            massapoliesterLabel.TabIndex = 54;
+            massapoliesterLabel.Text = "Massa Poliester";
+            // 
+            // massafibraLabel
+            // 
+            massafibraLabel.AutoSize = true;
+            massafibraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            massafibraLabel.Location = new System.Drawing.Point(336, 359);
+            massafibraLabel.Name = "massafibraLabel";
+            massafibraLabel.Size = new System.Drawing.Size(83, 16);
+            massafibraLabel.TabIndex = 56;
+            massafibraLabel.Text = "Massa Fibra";
+            // 
+            // tintaverdeLabel
+            // 
+            tintaverdeLabel.AutoSize = true;
+            tintaverdeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tintaverdeLabel.Location = new System.Drawing.Point(328, 393);
+            tintaverdeLabel.Name = "tintaverdeLabel";
+            tintaverdeLabel.Size = new System.Drawing.Size(105, 16);
+            tintaverdeLabel.TabIndex = 58;
+            tintaverdeLabel.Text = "Tinta Verde Vert";
+            // 
+            // catalisadormassaLabel
+            // 
+            catalisadormassaLabel.AutoSize = true;
+            catalisadormassaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            catalisadormassaLabel.Location = new System.Drawing.Point(321, 428);
+            catalisadormassaLabel.Name = "catalisadormassaLabel";
+            catalisadormassaLabel.Size = new System.Drawing.Size(120, 16);
+            catalisadormassaLabel.TabIndex = 60;
+            catalisadormassaLabel.Text = "Catalizador Massa";
+            // 
+            // tintapretaLabel
+            // 
+            tintapretaLabel.AutoSize = true;
+            tintapretaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tintapretaLabel.Location = new System.Drawing.Point(357, 467);
+            tintapretaLabel.Name = "tintapretaLabel";
+            tintapretaLabel.Size = new System.Drawing.Size(73, 16);
+            tintapretaLabel.TabIndex = 62;
+            tintapretaLabel.Text = "Tinta Preta";
+            // 
+            // redutorLabel
+            // 
+            redutorLabel.AutoSize = true;
+            redutorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            redutorLabel.Location = new System.Drawing.Point(374, 509);
+            redutorLabel.Name = "redutorLabel";
+            redutorLabel.Size = new System.Drawing.Size(56, 16);
+            redutorLabel.TabIndex = 64;
+            redutorLabel.Text = "Redutor";
+            // 
+            // cidadeRJgradeLabel
+            // 
+            cidadeRJgradeLabel.AutoSize = true;
+            cidadeRJgradeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cidadeRJgradeLabel.Location = new System.Drawing.Point(333, 555);
+            cidadeRJgradeLabel.Name = "cidadeRJgradeLabel";
+            cidadeRJgradeLabel.Size = new System.Drawing.Size(113, 16);
+            cidadeRJgradeLabel.TabIndex = 66;
+            cidadeRJgradeLabel.Text = "Cidade RJ Grade";
+            // 
+            // disco80Label
+            // 
+            disco80Label.AutoSize = true;
+            disco80Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            disco80Label.Location = new System.Drawing.Point(345, 594);
+            disco80Label.Name = "disco80Label";
+            disco80Label.Size = new System.Drawing.Size(87, 16);
+            disco80Label.TabIndex = 68;
+            disco80Label.Text = "Disco Lixa 80";
             // 
             // tsControle
             // 
@@ -490,38 +831,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
-            // btnCalcularAR
-            // 
-            this.btnCalcularAR.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalcularAR.BackgroundImage = global::Empresa2.Properties.Resources.iconfinder_calculator_1291736__1_;
-            this.btnCalcularAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCalcularAR.FlatAppearance.BorderSize = 0;
-            this.btnCalcularAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcularAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularAR.Location = new System.Drawing.Point(12, 625);
-            this.btnCalcularAR.Name = "btnCalcularAR";
-            this.btnCalcularAR.Size = new System.Drawing.Size(72, 77);
-            this.btnCalcularAR.TabIndex = 120;
-            this.btnCalcularAR.Text = "Calcular";
-            this.btnCalcularAR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCalcularAR.UseVisualStyleBackColor = false;
-            // 
-            // btnCalcular1722
-            // 
-            this.btnCalcular1722.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalcular1722.BackgroundImage = global::Empresa2.Properties.Resources.iconfinder_calculator_1291736__1_;
-            this.btnCalcular1722.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCalcular1722.FlatAppearance.BorderSize = 0;
-            this.btnCalcular1722.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular1722.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCalcular1722.Location = new System.Drawing.Point(12, 625);
-            this.btnCalcular1722.Name = "btnCalcular1722";
-            this.btnCalcular1722.Size = new System.Drawing.Size(72, 77);
-            this.btnCalcular1722.TabIndex = 119;
-            this.btnCalcular1722.Text = "Calcular";
-            this.btnCalcular1722.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCalcular1722.UseVisualStyleBackColor = false;
-            // 
             // pnlCheckFrente
             // 
             this.pnlCheckFrente.BackColor = System.Drawing.Color.Transparent;
@@ -684,6 +993,7 @@
             this.rbTraseira.TabStop = true;
             this.rbTraseira.Text = "Traseira";
             this.rbTraseira.UseVisualStyleBackColor = false;
+            this.rbTraseira.CheckedChanged += new System.EventHandler(this.rbTraseira_CheckedChanged);
             // 
             // checkP
             // 
@@ -713,22 +1023,6 @@
             this.checkCP.UseVisualStyleBackColor = false;
             this.checkCP.CheckedChanged += new System.EventHandler(this.checkCP_CheckedChanged_1);
             // 
-            // btnCalcular
-            // 
-            this.btnCalcular.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalcular.BackgroundImage = global::Empresa2.Properties.Resources.iconfinder_calculator_1291736__1_;
-            this.btnCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCalcular.FlatAppearance.BorderSize = 0;
-            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCalcular.Location = new System.Drawing.Point(12, 625);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(72, 77);
-            this.btnCalcular.TabIndex = 108;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCalcular.UseVisualStyleBackColor = false;
-            // 
             // rbDianteira
             // 
             this.rbDianteira.AutoSize = true;
@@ -741,6 +1035,7 @@
             this.rbDianteira.TabIndex = 113;
             this.rbDianteira.Text = "Dianteira";
             this.rbDianteira.UseVisualStyleBackColor = false;
+            this.rbDianteira.CheckedChanged += new System.EventHandler(this.rbDianteira_CheckedChanged);
             // 
             // rbLE
             // 
@@ -754,6 +1049,7 @@
             this.rbLE.TabIndex = 114;
             this.rbLE.Text = "Lado Esquerdo";
             this.rbLE.UseVisualStyleBackColor = false;
+            this.rbLE.CheckedChanged += new System.EventHandler(this.rbLE_CheckedChanged);
             // 
             // rbLD
             // 
@@ -767,6 +1063,7 @@
             this.rbLD.TabIndex = 115;
             this.rbLD.Text = "Lado Direito";
             this.rbLD.UseVisualStyleBackColor = false;
+            this.rbLD.CheckedChanged += new System.EventHandler(this.rbLD_CheckedChanged);
             // 
             // pnlCheckLD
             // 
@@ -1293,6 +1590,7 @@
             // pnlProdutos
             // 
             this.pnlProdutos.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlProdutos.Controls.Add(this.btnTeste);
             this.pnlProdutos.Controls.Add(disco80Label);
             this.pnlProdutos.Controls.Add(this.disco80TextBox);
             this.pnlProdutos.Controls.Add(cidadeRJgradeLabel);
@@ -1363,21 +1661,357 @@
             this.pnlProdutos.Controls.Add(this.chapa75TextBox);
             this.pnlProdutos.Controls.Add(chapa90Label);
             this.pnlProdutos.Controls.Add(this.chapa90TextBox);
-            this.pnlProdutos.Location = new System.Drawing.Point(109, 50);
+            this.pnlProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProdutos.Location = new System.Drawing.Point(0, 0);
             this.pnlProdutos.Name = "pnlProdutos";
-            this.pnlProdutos.Size = new System.Drawing.Size(240, 99);
+            this.pnlProdutos.Size = new System.Drawing.Size(948, 714);
             this.pnlProdutos.TabIndex = 123;
             this.pnlProdutos.Visible = false;
+            // 
+            // btnTeste
+            // 
+            this.btnTeste.Location = new System.Drawing.Point(595, 86);
+            this.btnTeste.Name = "btnTeste";
+            this.btnTeste.Size = new System.Drawing.Size(75, 23);
+            this.btnTeste.TabIndex = 70;
+            this.btnTeste.Text = "button1";
+            this.btnTeste.UseVisualStyleBackColor = true;
+            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            // 
+            // disco80TextBox
+            // 
+            this.disco80TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "disco80", true));
+            this.disco80TextBox.Enabled = false;
+            this.disco80TextBox.Location = new System.Drawing.Point(463, 596);
+            this.disco80TextBox.Name = "disco80TextBox";
+            this.disco80TextBox.Size = new System.Drawing.Size(100, 20);
+            this.disco80TextBox.TabIndex = 69;
+            // 
+            // produtosBindingSource
+            // 
+            this.produtosBindingSource.DataMember = "produtos";
+            this.produtosBindingSource.DataSource = this.vnslourdesDataSet;
             // 
             // vnslourdesDataSet
             // 
             this.vnslourdesDataSet.DataSetName = "vnslourdesDataSet";
             this.vnslourdesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // produtosBindingSource
+            // cidadeRJgradeTextBox
             // 
-            this.produtosBindingSource.DataMember = "produtos";
-            this.produtosBindingSource.DataSource = this.vnslourdesDataSet;
+            this.cidadeRJgradeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "cidadeRJgrade", true));
+            this.cidadeRJgradeTextBox.Enabled = false;
+            this.cidadeRJgradeTextBox.Location = new System.Drawing.Point(463, 548);
+            this.cidadeRJgradeTextBox.Name = "cidadeRJgradeTextBox";
+            this.cidadeRJgradeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cidadeRJgradeTextBox.TabIndex = 67;
+            // 
+            // redutorTextBox
+            // 
+            this.redutorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "redutor", true));
+            this.redutorTextBox.Enabled = false;
+            this.redutorTextBox.Location = new System.Drawing.Point(463, 509);
+            this.redutorTextBox.Name = "redutorTextBox";
+            this.redutorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.redutorTextBox.TabIndex = 65;
+            // 
+            // tintapretaTextBox
+            // 
+            this.tintapretaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "tintapreta", true));
+            this.tintapretaTextBox.Enabled = false;
+            this.tintapretaTextBox.Location = new System.Drawing.Point(463, 466);
+            this.tintapretaTextBox.Name = "tintapretaTextBox";
+            this.tintapretaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.tintapretaTextBox.TabIndex = 63;
+            // 
+            // catalisadormassaTextBox
+            // 
+            this.catalisadormassaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "catalisadormassa", true));
+            this.catalisadormassaTextBox.Enabled = false;
+            this.catalisadormassaTextBox.Location = new System.Drawing.Point(463, 427);
+            this.catalisadormassaTextBox.Name = "catalisadormassaTextBox";
+            this.catalisadormassaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.catalisadormassaTextBox.TabIndex = 61;
+            // 
+            // tintaverdeTextBox
+            // 
+            this.tintaverdeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "tintaverde", true));
+            this.tintaverdeTextBox.Enabled = false;
+            this.tintaverdeTextBox.Location = new System.Drawing.Point(463, 392);
+            this.tintaverdeTextBox.Name = "tintaverdeTextBox";
+            this.tintaverdeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.tintaverdeTextBox.TabIndex = 59;
+            // 
+            // massafibraTextBox
+            // 
+            this.massafibraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "massafibra", true));
+            this.massafibraTextBox.Enabled = false;
+            this.massafibraTextBox.Location = new System.Drawing.Point(463, 356);
+            this.massafibraTextBox.Name = "massafibraTextBox";
+            this.massafibraTextBox.Size = new System.Drawing.Size(100, 20);
+            this.massafibraTextBox.TabIndex = 57;
+            // 
+            // massapoliesterTextBox
+            // 
+            this.massapoliesterTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "massapoliester", true));
+            this.massapoliesterTextBox.Enabled = false;
+            this.massapoliesterTextBox.Location = new System.Drawing.Point(463, 325);
+            this.massapoliesterTextBox.Name = "massapoliesterTextBox";
+            this.massapoliesterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.massapoliesterTextBox.TabIndex = 55;
+            // 
+            // puxadorTextBox
+            // 
+            this.puxadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "puxador", true));
+            this.puxadorTextBox.Enabled = false;
+            this.puxadorTextBox.Location = new System.Drawing.Point(463, 283);
+            this.puxadorTextBox.Name = "puxadorTextBox";
+            this.puxadorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.puxadorTextBox.TabIndex = 53;
+            // 
+            // dobradicaLETextBox
+            // 
+            this.dobradicaLETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "dobradicaLE", true));
+            this.dobradicaLETextBox.Enabled = false;
+            this.dobradicaLETextBox.Location = new System.Drawing.Point(463, 241);
+            this.dobradicaLETextBox.Name = "dobradicaLETextBox";
+            this.dobradicaLETextBox.Size = new System.Drawing.Size(100, 20);
+            this.dobradicaLETextBox.TabIndex = 51;
+            // 
+            // dobradicaLDTextBox
+            // 
+            this.dobradicaLDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "dobradicaLD", true));
+            this.dobradicaLDTextBox.Enabled = false;
+            this.dobradicaLDTextBox.Location = new System.Drawing.Point(463, 208);
+            this.dobradicaLDTextBox.Name = "dobradicaLDTextBox";
+            this.dobradicaLDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.dobradicaLDTextBox.TabIndex = 49;
+            // 
+            // peixaoTextBox
+            // 
+            this.peixaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "peixao", true));
+            this.peixaoTextBox.Enabled = false;
+            this.peixaoTextBox.Location = new System.Drawing.Point(463, 170);
+            this.peixaoTextBox.Name = "peixaoTextBox";
+            this.peixaoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.peixaoTextBox.TabIndex = 47;
+            // 
+            // trincotTextBox
+            // 
+            this.trincotTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "trincot", true));
+            this.trincotTextBox.Enabled = false;
+            this.trincotTextBox.Location = new System.Drawing.Point(463, 131);
+            this.trincotTextBox.Name = "trincotTextBox";
+            this.trincotTextBox.Size = new System.Drawing.Size(100, 20);
+            this.trincotTextBox.TabIndex = 45;
+            // 
+            // trincobTextBox
+            // 
+            this.trincobTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "trincob", true));
+            this.trincobTextBox.Enabled = false;
+            this.trincobTextBox.Location = new System.Drawing.Point(463, 95);
+            this.trincobTextBox.Name = "trincobTextBox";
+            this.trincobTextBox.Size = new System.Drawing.Size(100, 20);
+            this.trincobTextBox.TabIndex = 43;
+            // 
+            // fitagrossaTextBox
+            // 
+            this.fitagrossaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "fitagrossa", true));
+            this.fitagrossaTextBox.Enabled = false;
+            this.fitagrossaTextBox.Location = new System.Drawing.Point(463, 57);
+            this.fitagrossaTextBox.Name = "fitagrossaTextBox";
+            this.fitagrossaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.fitagrossaTextBox.TabIndex = 41;
+            // 
+            // fitafinaTextBox
+            // 
+            this.fitafinaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "fitafina", true));
+            this.fitafinaTextBox.Enabled = false;
+            this.fitafinaTextBox.Location = new System.Drawing.Point(463, 25);
+            this.fitafinaTextBox.Name = "fitafinaTextBox";
+            this.fitafinaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.fitafinaTextBox.TabIndex = 39;
+            // 
+            // duplafaceTextBox
+            // 
+            this.duplafaceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "duplaface", true));
+            this.duplafaceTextBox.Enabled = false;
+            this.duplafaceTextBox.Location = new System.Drawing.Point(124, 662);
+            this.duplafaceTextBox.Name = "duplafaceTextBox";
+            this.duplafaceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.duplafaceTextBox.TabIndex = 37;
+            // 
+            // peixinhoTextBox
+            // 
+            this.peixinhoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "peixinho", true));
+            this.peixinhoTextBox.Enabled = false;
+            this.peixinhoTextBox.Location = new System.Drawing.Point(124, 621);
+            this.peixinhoTextBox.Name = "peixinhoTextBox";
+            this.peixinhoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.peixinhoTextBox.TabIndex = 35;
+            // 
+            // faixarefletivaTextBox
+            // 
+            this.faixarefletivaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "faixarefletiva", true));
+            this.faixarefletivaTextBox.Enabled = false;
+            this.faixarefletivaTextBox.Location = new System.Drawing.Point(124, 585);
+            this.faixarefletivaTextBox.Name = "faixarefletivaTextBox";
+            this.faixarefletivaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.faixarefletivaTextBox.TabIndex = 33;
+            // 
+            // cadeiranteTextBox
+            // 
+            this.cadeiranteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "cadeirante", true));
+            this.cadeiranteTextBox.Enabled = false;
+            this.cadeiranteTextBox.Location = new System.Drawing.Point(124, 551);
+            this.cadeiranteTextBox.Name = "cadeiranteTextBox";
+            this.cadeiranteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cadeiranteTextBox.TabIndex = 31;
+            // 
+            // setaTextBox
+            // 
+            this.setaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "seta", true));
+            this.setaTextBox.Enabled = false;
+            this.setaTextBox.Location = new System.Drawing.Point(124, 512);
+            this.setaTextBox.Name = "setaTextBox";
+            this.setaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.setaTextBox.TabIndex = 29;
+            // 
+            // btnCancelarValores
+            // 
+            this.btnCancelarValores.Location = new System.Drawing.Point(853, 656);
+            this.btnCancelarValores.Name = "btnCancelarValores";
+            this.btnCancelarValores.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarValores.TabIndex = 27;
+            this.btnCancelarValores.Text = "Salvar";
+            this.btnCancelarValores.UseVisualStyleBackColor = true;
+            // 
+            // capsulaTextBox
+            // 
+            this.capsulaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "capsula", true));
+            this.capsulaTextBox.Enabled = false;
+            this.capsulaTextBox.Location = new System.Drawing.Point(124, 469);
+            this.capsulaTextBox.Name = "capsulaTextBox";
+            this.capsulaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.capsulaTextBox.TabIndex = 26;
+            // 
+            // papelTextBox
+            // 
+            this.papelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "papel", true));
+            this.papelTextBox.Enabled = false;
+            this.papelTextBox.Location = new System.Drawing.Point(124, 430);
+            this.papelTextBox.Name = "papelTextBox";
+            this.papelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.papelTextBox.TabIndex = 24;
+            // 
+            // nordemtTextBox
+            // 
+            this.nordemtTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "nordemt", true));
+            this.nordemtTextBox.Enabled = false;
+            this.nordemtTextBox.Location = new System.Drawing.Point(124, 395);
+            this.nordemtTextBox.Name = "nordemtTextBox";
+            this.nordemtTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nordemtTextBox.TabIndex = 22;
+            // 
+            // nordemgTextBox
+            // 
+            this.nordemgTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "nordemg", true));
+            this.nordemgTextBox.Enabled = false;
+            this.nordemgTextBox.Location = new System.Drawing.Point(124, 359);
+            this.nordemgTextBox.Name = "nordemgTextBox";
+            this.nordemgTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nordemgTextBox.TabIndex = 20;
+            // 
+            // nordemTextBox
+            // 
+            this.nordemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "nordem", true));
+            this.nordemTextBox.Enabled = false;
+            this.nordemTextBox.Location = new System.Drawing.Point(124, 324);
+            this.nordemTextBox.Name = "nordemTextBox";
+            this.nordemTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nordemTextBox.TabIndex = 18;
+            // 
+            // internorteTextBox
+            // 
+            this.internorteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "internorte", true));
+            this.internorteTextBox.Enabled = false;
+            this.internorteTextBox.Location = new System.Drawing.Point(124, 286);
+            this.internorteTextBox.Name = "internorteTextBox";
+            this.internorteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.internorteTextBox.TabIndex = 16;
+            // 
+            // cidadeRJTextBox
+            // 
+            this.cidadeRJTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "cidadeRJ", true));
+            this.cidadeRJTextBox.Enabled = false;
+            this.cidadeRJTextBox.Location = new System.Drawing.Point(124, 244);
+            this.cidadeRJTextBox.Name = "cidadeRJTextBox";
+            this.cidadeRJTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cidadeRJTextBox.TabIndex = 14;
+            // 
+            // m60TextBox
+            // 
+            this.m60TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "m60", true));
+            this.m60TextBox.Enabled = false;
+            this.m60TextBox.Location = new System.Drawing.Point(124, 207);
+            this.m60TextBox.Name = "m60TextBox";
+            this.m60TextBox.Size = new System.Drawing.Size(100, 20);
+            this.m60TextBox.TabIndex = 12;
+            // 
+            // chapelcoTextBox
+            // 
+            this.chapelcoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "chapelco", true));
+            this.chapelcoTextBox.Enabled = false;
+            this.chapelcoTextBox.Location = new System.Drawing.Point(124, 170);
+            this.chapelcoTextBox.Name = "chapelcoTextBox";
+            this.chapelcoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.chapelcoTextBox.TabIndex = 10;
+            // 
+            // btnAlterarValores
+            // 
+            this.btnAlterarValores.Location = new System.Drawing.Point(773, 656);
+            this.btnAlterarValores.Name = "btnAlterarValores";
+            this.btnAlterarValores.Size = new System.Drawing.Size(72, 23);
+            this.btnAlterarValores.TabIndex = 8;
+            this.btnAlterarValores.Text = "Alterar";
+            this.btnAlterarValores.UseVisualStyleBackColor = true;
+            this.btnAlterarValores.Click += new System.EventHandler(this.btnSalvarProdutos_Click);
+            // 
+            // catalizadorTextBox
+            // 
+            this.catalizadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "catalizador", true));
+            this.catalizadorTextBox.Enabled = false;
+            this.catalizadorTextBox.Location = new System.Drawing.Point(124, 134);
+            this.catalizadorTextBox.Name = "catalizadorTextBox";
+            this.catalizadorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.catalizadorTextBox.TabIndex = 7;
+            // 
+            // washprimerTextBox
+            // 
+            this.washprimerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "washprimer", true));
+            this.washprimerTextBox.Enabled = false;
+            this.washprimerTextBox.Location = new System.Drawing.Point(124, 98);
+            this.washprimerTextBox.Name = "washprimerTextBox";
+            this.washprimerTextBox.Size = new System.Drawing.Size(100, 20);
+            this.washprimerTextBox.TabIndex = 5;
+            // 
+            // chapa75TextBox
+            // 
+            this.chapa75TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "chapa75", true));
+            this.chapa75TextBox.Enabled = false;
+            this.chapa75TextBox.Location = new System.Drawing.Point(124, 60);
+            this.chapa75TextBox.Name = "chapa75TextBox";
+            this.chapa75TextBox.Size = new System.Drawing.Size(100, 20);
+            this.chapa75TextBox.TabIndex = 3;
+            // 
+            // chapa90TextBox
+            // 
+            this.chapa90TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "chapa90", true));
+            this.chapa90TextBox.Enabled = false;
+            this.chapa90TextBox.Location = new System.Drawing.Point(124, 25);
+            this.chapa90TextBox.Name = "chapa90TextBox";
+            this.chapa90TextBox.Size = new System.Drawing.Size(100, 20);
+            this.chapa90TextBox.TabIndex = 1;
             // 
             // produtosTableAdapter
             // 
@@ -1390,636 +2024,32 @@
             this.tableAdapterManager.produtosTableAdapter = this.produtosTableAdapter;
             this.tableAdapterManager.UpdateOrder = Empresa2.vnslourdesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // chapa90Label
-            // 
-            chapa90Label.AutoSize = true;
-            chapa90Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chapa90Label.Location = new System.Drawing.Point(6, 29);
-            chapa90Label.Name = "chapa90Label";
-            chapa90Label.Size = new System.Drawing.Size(65, 16);
-            chapa90Label.TabIndex = 0;
-            chapa90Label.Text = "Chapa 90";
-            // 
-            // chapa90TextBox
-            // 
-            this.chapa90TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "chapa90", true));
-            this.chapa90TextBox.Location = new System.Drawing.Point(124, 25);
-            this.chapa90TextBox.Name = "chapa90TextBox";
-            this.chapa90TextBox.Size = new System.Drawing.Size(100, 20);
-            this.chapa90TextBox.TabIndex = 1;
-            // 
-            // chapa75Label
-            // 
-            chapa75Label.AutoSize = true;
-            chapa75Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chapa75Label.Location = new System.Drawing.Point(6, 64);
-            chapa75Label.Name = "chapa75Label";
-            chapa75Label.Size = new System.Drawing.Size(65, 16);
-            chapa75Label.TabIndex = 2;
-            chapa75Label.Text = "Chapa 75";
-            // 
-            // chapa75TextBox
-            // 
-            this.chapa75TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "chapa75", true));
-            this.chapa75TextBox.Location = new System.Drawing.Point(124, 60);
-            this.chapa75TextBox.Name = "chapa75TextBox";
-            this.chapa75TextBox.Size = new System.Drawing.Size(100, 20);
-            this.chapa75TextBox.TabIndex = 3;
-            // 
-            // washprimerLabel
-            // 
-            washprimerLabel.AutoSize = true;
-            washprimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            washprimerLabel.Location = new System.Drawing.Point(6, 102);
-            washprimerLabel.Name = "washprimerLabel";
-            washprimerLabel.Size = new System.Drawing.Size(85, 16);
-            washprimerLabel.TabIndex = 4;
-            washprimerLabel.Text = "Wash Primer";
-            // 
-            // washprimerTextBox
-            // 
-            this.washprimerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "washprimer", true));
-            this.washprimerTextBox.Location = new System.Drawing.Point(124, 98);
-            this.washprimerTextBox.Name = "washprimerTextBox";
-            this.washprimerTextBox.Size = new System.Drawing.Size(100, 20);
-            this.washprimerTextBox.TabIndex = 5;
-            // 
-            // catalizadorLabel
-            // 
-            catalizadorLabel.AutoSize = true;
-            catalizadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            catalizadorLabel.Location = new System.Drawing.Point(6, 134);
-            catalizadorLabel.Name = "catalizadorLabel";
-            catalizadorLabel.Size = new System.Drawing.Size(76, 16);
-            catalizadorLabel.TabIndex = 6;
-            catalizadorLabel.Text = "Catalizador";
-            // 
-            // catalizadorTextBox
-            // 
-            this.catalizadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "catalizador", true));
-            this.catalizadorTextBox.Location = new System.Drawing.Point(124, 134);
-            this.catalizadorTextBox.Name = "catalizadorTextBox";
-            this.catalizadorTextBox.Size = new System.Drawing.Size(100, 20);
-            this.catalizadorTextBox.TabIndex = 7;
-            // 
-            // btnAlterarValores
-            // 
-            this.btnAlterarValores.Location = new System.Drawing.Point(856, 656);
-            this.btnAlterarValores.Name = "btnAlterarValores";
-            this.btnAlterarValores.Size = new System.Drawing.Size(72, 23);
-            this.btnAlterarValores.TabIndex = 8;
-            this.btnAlterarValores.Text = "Alterar";
-            this.btnAlterarValores.UseVisualStyleBackColor = true;
-            this.btnAlterarValores.Click += new System.EventHandler(this.btnSalvarProdutos_Click);
-            // 
-            // chapelcoLabel
-            // 
-            chapelcoLabel.AutoSize = true;
-            chapelcoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chapelcoLabel.Location = new System.Drawing.Point(6, 174);
-            chapelcoLabel.Name = "chapelcoLabel";
-            chapelcoLabel.Size = new System.Drawing.Size(66, 16);
-            chapelcoLabel.TabIndex = 9;
-            chapelcoLabel.Text = "Chapelco";
-            // 
-            // chapelcoTextBox
-            // 
-            this.chapelcoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "chapelco", true));
-            this.chapelcoTextBox.Location = new System.Drawing.Point(124, 170);
-            this.chapelcoTextBox.Name = "chapelcoTextBox";
-            this.chapelcoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.chapelcoTextBox.TabIndex = 10;
-            // 
-            // m60Label
-            // 
-            m60Label.AutoSize = true;
-            m60Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            m60Label.Location = new System.Drawing.Point(6, 211);
-            m60Label.Name = "m60Label";
-            m60Label.Size = new System.Drawing.Size(33, 16);
-            m60Label.TabIndex = 11;
-            m60Label.Text = "M60";
-            // 
-            // m60TextBox
-            // 
-            this.m60TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "m60", true));
-            this.m60TextBox.Location = new System.Drawing.Point(124, 207);
-            this.m60TextBox.Name = "m60TextBox";
-            this.m60TextBox.Size = new System.Drawing.Size(100, 20);
-            this.m60TextBox.TabIndex = 12;
-            // 
-            // cidadeRJLabel
-            // 
-            cidadeRJLabel.AutoSize = true;
-            cidadeRJLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cidadeRJLabel.Location = new System.Drawing.Point(6, 248);
-            cidadeRJLabel.Name = "cidadeRJLabel";
-            cidadeRJLabel.Size = new System.Drawing.Size(72, 16);
-            cidadeRJLabel.TabIndex = 13;
-            cidadeRJLabel.Text = "Cidade RJ";
-            // 
-            // cidadeRJTextBox
-            // 
-            this.cidadeRJTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "cidadeRJ", true));
-            this.cidadeRJTextBox.Location = new System.Drawing.Point(124, 244);
-            this.cidadeRJTextBox.Name = "cidadeRJTextBox";
-            this.cidadeRJTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cidadeRJTextBox.TabIndex = 14;
-            // 
-            // internorteLabel
-            // 
-            internorteLabel.AutoSize = true;
-            internorteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            internorteLabel.Location = new System.Drawing.Point(6, 290);
-            internorteLabel.Name = "internorteLabel";
-            internorteLabel.Size = new System.Drawing.Size(63, 16);
-            internorteLabel.TabIndex = 15;
-            internorteLabel.Text = "Internorte";
-            // 
-            // internorteTextBox
-            // 
-            this.internorteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "internorte", true));
-            this.internorteTextBox.Location = new System.Drawing.Point(124, 286);
-            this.internorteTextBox.Name = "internorteTextBox";
-            this.internorteTextBox.Size = new System.Drawing.Size(100, 20);
-            this.internorteTextBox.TabIndex = 16;
-            // 
-            // nordemLabel
-            // 
-            nordemLabel.AutoSize = true;
-            nordemLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nordemLabel.Location = new System.Drawing.Point(6, 328);
-            nordemLabel.Name = "nordemLabel";
-            nordemLabel.Size = new System.Drawing.Size(67, 16);
-            nordemLabel.TabIndex = 17;
-            nordemLabel.Text = "Nº Ordem";
-            // 
-            // nordemTextBox
-            // 
-            this.nordemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "nordem", true));
-            this.nordemTextBox.Location = new System.Drawing.Point(124, 324);
-            this.nordemTextBox.Name = "nordemTextBox";
-            this.nordemTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nordemTextBox.TabIndex = 18;
-            // 
-            // nordemgLabel
-            // 
-            nordemgLabel.AutoSize = true;
-            nordemgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nordemgLabel.Location = new System.Drawing.Point(6, 359);
-            nordemgLabel.Name = "nordemgLabel";
-            nordemgLabel.Size = new System.Drawing.Size(108, 16);
-            nordemgLabel.TabIndex = 19;
-            nordemgLabel.Text = "Nº Ordem Grade";
-            // 
-            // nordemgTextBox
-            // 
-            this.nordemgTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "nordemg", true));
-            this.nordemgTextBox.Location = new System.Drawing.Point(124, 359);
-            this.nordemgTextBox.Name = "nordemgTextBox";
-            this.nordemgTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nordemgTextBox.TabIndex = 20;
-            // 
-            // nordemtLabel
-            // 
-            nordemtLabel.AutoSize = true;
-            nordemtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nordemtLabel.Location = new System.Drawing.Point(6, 399);
-            nordemtLabel.Name = "nordemtLabel";
-            nordemtLabel.Size = new System.Drawing.Size(80, 16);
-            nordemtLabel.TabIndex = 21;
-            nordemtLabel.Text = "N º Traseiro";
-            // 
-            // nordemtTextBox
-            // 
-            this.nordemtTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "nordemt", true));
-            this.nordemtTextBox.Location = new System.Drawing.Point(124, 395);
-            this.nordemtTextBox.Name = "nordemtTextBox";
-            this.nordemtTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nordemtTextBox.TabIndex = 22;
-            // 
-            // papelLabel
-            // 
-            papelLabel.AutoSize = true;
-            papelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            papelLabel.Location = new System.Drawing.Point(6, 434);
-            papelLabel.Name = "papelLabel";
-            papelLabel.Size = new System.Drawing.Size(44, 16);
-            papelLabel.TabIndex = 23;
-            papelLabel.Text = "Papel";
-            // 
-            // papelTextBox
-            // 
-            this.papelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "papel", true));
-            this.papelTextBox.Location = new System.Drawing.Point(124, 430);
-            this.papelTextBox.Name = "papelTextBox";
-            this.papelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.papelTextBox.TabIndex = 24;
-            // 
-            // capsulaLabel
-            // 
-            capsulaLabel.AutoSize = true;
-            capsulaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            capsulaLabel.Location = new System.Drawing.Point(6, 473);
-            capsulaLabel.Name = "capsulaLabel";
-            capsulaLabel.Size = new System.Drawing.Size(58, 16);
-            capsulaLabel.TabIndex = 25;
-            capsulaLabel.Text = "Capsula";
-            // 
-            // capsulaTextBox
-            // 
-            this.capsulaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "capsula", true));
-            this.capsulaTextBox.Location = new System.Drawing.Point(124, 469);
-            this.capsulaTextBox.Name = "capsulaTextBox";
-            this.capsulaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.capsulaTextBox.TabIndex = 26;
-            // 
-            // btnCancelarValores
-            // 
-            this.btnCancelarValores.Location = new System.Drawing.Point(775, 657);
-            this.btnCancelarValores.Name = "btnCancelarValores";
-            this.btnCancelarValores.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarValores.TabIndex = 27;
-            this.btnCancelarValores.Text = "Cancelar";
-            this.btnCancelarValores.UseVisualStyleBackColor = true;
-            // 
-            // setaLabel
-            // 
-            setaLabel.AutoSize = true;
-            setaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            setaLabel.Location = new System.Drawing.Point(6, 516);
-            setaLabel.Name = "setaLabel";
-            setaLabel.Size = new System.Drawing.Size(80, 16);
-            setaLabel.TabIndex = 28;
-            setaLabel.Text = "Seta Lateral";
-            // 
-            // setaTextBox
-            // 
-            this.setaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "seta", true));
-            this.setaTextBox.Location = new System.Drawing.Point(124, 512);
-            this.setaTextBox.Name = "setaTextBox";
-            this.setaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.setaTextBox.TabIndex = 29;
-            // 
-            // cadeiranteLabel
-            // 
-            cadeiranteLabel.AutoSize = true;
-            cadeiranteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cadeiranteLabel.Location = new System.Drawing.Point(6, 555);
-            cadeiranteLabel.Name = "cadeiranteLabel";
-            cadeiranteLabel.Size = new System.Drawing.Size(74, 16);
-            cadeiranteLabel.TabIndex = 30;
-            cadeiranteLabel.Text = "Cadeirante";
-            // 
-            // cadeiranteTextBox
-            // 
-            this.cadeiranteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "cadeirante", true));
-            this.cadeiranteTextBox.Location = new System.Drawing.Point(124, 551);
-            this.cadeiranteTextBox.Name = "cadeiranteTextBox";
-            this.cadeiranteTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cadeiranteTextBox.TabIndex = 31;
-            // 
-            // faixarefletivaLabel
-            // 
-            faixarefletivaLabel.AutoSize = true;
-            faixarefletivaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            faixarefletivaLabel.Location = new System.Drawing.Point(9, 592);
-            faixarefletivaLabel.Name = "faixarefletivaLabel";
-            faixarefletivaLabel.Size = new System.Drawing.Size(97, 16);
-            faixarefletivaLabel.TabIndex = 32;
-            faixarefletivaLabel.Text = "Faixa Refletiva";
-            // 
-            // faixarefletivaTextBox
-            // 
-            this.faixarefletivaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "faixarefletiva", true));
-            this.faixarefletivaTextBox.Location = new System.Drawing.Point(124, 585);
-            this.faixarefletivaTextBox.Name = "faixarefletivaTextBox";
-            this.faixarefletivaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.faixarefletivaTextBox.TabIndex = 33;
-            // 
-            // peixinhoLabel
-            // 
-            peixinhoLabel.AutoSize = true;
-            peixinhoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            peixinhoLabel.Location = new System.Drawing.Point(6, 626);
-            peixinhoLabel.Name = "peixinhoLabel";
-            peixinhoLabel.Size = new System.Drawing.Size(59, 16);
-            peixinhoLabel.TabIndex = 34;
-            peixinhoLabel.Text = "Peixinho";
-            // 
-            // peixinhoTextBox
-            // 
-            this.peixinhoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "peixinho", true));
-            this.peixinhoTextBox.Location = new System.Drawing.Point(124, 621);
-            this.peixinhoTextBox.Name = "peixinhoTextBox";
-            this.peixinhoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.peixinhoTextBox.TabIndex = 35;
-            // 
-            // duplafaceLabel
-            // 
-            duplafaceLabel.AutoSize = true;
-            duplafaceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            duplafaceLabel.Location = new System.Drawing.Point(9, 669);
-            duplafaceLabel.Name = "duplafaceLabel";
-            duplafaceLabel.Size = new System.Drawing.Size(103, 16);
-            duplafaceLabel.TabIndex = 36;
-            duplafaceLabel.Text = "Fita Dupla Face";
-            // 
-            // duplafaceTextBox
-            // 
-            this.duplafaceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "duplaface", true));
-            this.duplafaceTextBox.Location = new System.Drawing.Point(124, 662);
-            this.duplafaceTextBox.Name = "duplafaceTextBox";
-            this.duplafaceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.duplafaceTextBox.TabIndex = 37;
-            // 
-            // fitafinaLabel
-            // 
-            fitafinaLabel.AutoSize = true;
-            fitafinaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fitafinaLabel.Location = new System.Drawing.Point(355, 26);
-            fitafinaLabel.Name = "fitafinaLabel";
-            fitafinaLabel.Size = new System.Drawing.Size(59, 16);
-            fitafinaLabel.TabIndex = 38;
-            fitafinaLabel.Text = "Fita Fina";
-            // 
-            // fitafinaTextBox
-            // 
-            this.fitafinaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "fitafina", true));
-            this.fitafinaTextBox.Location = new System.Drawing.Point(463, 25);
-            this.fitafinaTextBox.Name = "fitafinaTextBox";
-            this.fitafinaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.fitafinaTextBox.TabIndex = 39;
-            // 
-            // fitagrossaLabel
-            // 
-            fitagrossaLabel.AutoSize = true;
-            fitagrossaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fitagrossaLabel.Location = new System.Drawing.Point(355, 58);
-            fitagrossaLabel.Name = "fitagrossaLabel";
-            fitagrossaLabel.Size = new System.Drawing.Size(77, 16);
-            fitagrossaLabel.TabIndex = 40;
-            fitagrossaLabel.Text = "Fita Grossa";
-            // 
-            // fitagrossaTextBox
-            // 
-            this.fitagrossaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "fitagrossa", true));
-            this.fitagrossaTextBox.Location = new System.Drawing.Point(463, 57);
-            this.fitagrossaTextBox.Name = "fitagrossaTextBox";
-            this.fitagrossaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.fitagrossaTextBox.TabIndex = 41;
-            // 
-            // trincobLabel
-            // 
-            trincobLabel.AutoSize = true;
-            trincobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            trincobLabel.Location = new System.Drawing.Point(298, 96);
-            trincobLabel.Name = "trincobLabel";
-            trincobLabel.Size = new System.Drawing.Size(139, 16);
-            trincobLabel.TabIndex = 42;
-            trincobLabel.Text = "Trinco Tampa Bateria";
-            // 
-            // trincobTextBox
-            // 
-            this.trincobTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "trincob", true));
-            this.trincobTextBox.Location = new System.Drawing.Point(463, 95);
-            this.trincobTextBox.Name = "trincobTextBox";
-            this.trincobTextBox.Size = new System.Drawing.Size(100, 20);
-            this.trincobTextBox.TabIndex = 43;
-            // 
-            // trincotLabel
-            // 
-            trincotLabel.AutoSize = true;
-            trincotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            trincotLabel.Location = new System.Drawing.Point(299, 132);
-            trincotLabel.Name = "trincotLabel";
-            trincotLabel.Size = new System.Drawing.Size(143, 16);
-            trincotLabel.TabIndex = 44;
-            trincotLabel.Text = "Trinco Tampa Tanque";
-            // 
-            // trincotTextBox
-            // 
-            this.trincotTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "trincot", true));
-            this.trincotTextBox.Location = new System.Drawing.Point(463, 131);
-            this.trincotTextBox.Name = "trincotTextBox";
-            this.trincotTextBox.Size = new System.Drawing.Size(100, 20);
-            this.trincotTextBox.TabIndex = 45;
-            // 
-            // peixaoLabel
-            // 
-            peixaoLabel.AutoSize = true;
-            peixaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            peixaoLabel.Location = new System.Drawing.Point(358, 171);
-            peixaoLabel.Name = "peixaoLabel";
-            peixaoLabel.Size = new System.Drawing.Size(50, 16);
-            peixaoLabel.TabIndex = 46;
-            peixaoLabel.Text = "Peixão";
-            // 
-            // peixaoTextBox
-            // 
-            this.peixaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "peixao", true));
-            this.peixaoTextBox.Location = new System.Drawing.Point(463, 170);
-            this.peixaoTextBox.Name = "peixaoTextBox";
-            this.peixaoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.peixaoTextBox.TabIndex = 47;
-            // 
-            // dobradicaLDLabel
-            // 
-            dobradicaLDLabel.AutoSize = true;
-            dobradicaLDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dobradicaLDLabel.Location = new System.Drawing.Point(298, 209);
-            dobradicaLDLabel.Name = "dobradicaLDLabel";
-            dobradicaLDLabel.Size = new System.Drawing.Size(148, 16);
-            dobradicaLDLabel.TabIndex = 48;
-            dobradicaLDLabel.Text = "Dobradiça Lado Direito";
-            // 
-            // dobradicaLDTextBox
-            // 
-            this.dobradicaLDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "dobradicaLD", true));
-            this.dobradicaLDTextBox.Location = new System.Drawing.Point(463, 208);
-            this.dobradicaLDTextBox.Name = "dobradicaLDTextBox";
-            this.dobradicaLDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.dobradicaLDTextBox.TabIndex = 49;
-            // 
-            // dobradicaLELabel
-            // 
-            dobradicaLELabel.AutoSize = true;
-            dobradicaLELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dobradicaLELabel.Location = new System.Drawing.Point(289, 245);
-            dobradicaLELabel.Name = "dobradicaLELabel";
-            dobradicaLELabel.Size = new System.Drawing.Size(168, 16);
-            dobradicaLELabel.TabIndex = 50;
-            dobradicaLELabel.Text = "Dobradiça Lado Esquerdo";
-            // 
-            // dobradicaLETextBox
-            // 
-            this.dobradicaLETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "dobradicaLE", true));
-            this.dobradicaLETextBox.Location = new System.Drawing.Point(463, 241);
-            this.dobradicaLETextBox.Name = "dobradicaLETextBox";
-            this.dobradicaLETextBox.Size = new System.Drawing.Size(100, 20);
-            this.dobradicaLETextBox.TabIndex = 51;
-            // 
-            // puxadorLabel
-            // 
-            puxadorLabel.AutoSize = true;
-            puxadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            puxadorLabel.Location = new System.Drawing.Point(336, 284);
-            puxadorLabel.Name = "puxadorLabel";
-            puxadorLabel.Size = new System.Drawing.Size(101, 16);
-            puxadorLabel.TabIndex = 52;
-            puxadorLabel.Text = "Puxador Chapa";
-            // 
-            // puxadorTextBox
-            // 
-            this.puxadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "puxador", true));
-            this.puxadorTextBox.Location = new System.Drawing.Point(463, 283);
-            this.puxadorTextBox.Name = "puxadorTextBox";
-            this.puxadorTextBox.Size = new System.Drawing.Size(100, 20);
-            this.puxadorTextBox.TabIndex = 53;
-            // 
-            // massapoliesterLabel
-            // 
-            massapoliesterLabel.AutoSize = true;
-            massapoliesterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            massapoliesterLabel.Location = new System.Drawing.Point(336, 326);
-            massapoliesterLabel.Name = "massapoliesterLabel";
-            massapoliesterLabel.Size = new System.Drawing.Size(105, 16);
-            massapoliesterLabel.TabIndex = 54;
-            massapoliesterLabel.Text = "Massa Poliester";
-            // 
-            // massapoliesterTextBox
-            // 
-            this.massapoliesterTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "massapoliester", true));
-            this.massapoliesterTextBox.Location = new System.Drawing.Point(463, 325);
-            this.massapoliesterTextBox.Name = "massapoliesterTextBox";
-            this.massapoliesterTextBox.Size = new System.Drawing.Size(100, 20);
-            this.massapoliesterTextBox.TabIndex = 55;
-            // 
-            // massafibraLabel
-            // 
-            massafibraLabel.AutoSize = true;
-            massafibraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            massafibraLabel.Location = new System.Drawing.Point(336, 359);
-            massafibraLabel.Name = "massafibraLabel";
-            massafibraLabel.Size = new System.Drawing.Size(83, 16);
-            massafibraLabel.TabIndex = 56;
-            massafibraLabel.Text = "Massa Fibra";
-            // 
-            // massafibraTextBox
-            // 
-            this.massafibraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "massafibra", true));
-            this.massafibraTextBox.Location = new System.Drawing.Point(463, 356);
-            this.massafibraTextBox.Name = "massafibraTextBox";
-            this.massafibraTextBox.Size = new System.Drawing.Size(100, 20);
-            this.massafibraTextBox.TabIndex = 57;
-            // 
-            // tintaverdeLabel
-            // 
-            tintaverdeLabel.AutoSize = true;
-            tintaverdeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tintaverdeLabel.Location = new System.Drawing.Point(328, 393);
-            tintaverdeLabel.Name = "tintaverdeLabel";
-            tintaverdeLabel.Size = new System.Drawing.Size(105, 16);
-            tintaverdeLabel.TabIndex = 58;
-            tintaverdeLabel.Text = "Tinta Verde Vert";
-            // 
-            // tintaverdeTextBox
-            // 
-            this.tintaverdeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "tintaverde", true));
-            this.tintaverdeTextBox.Location = new System.Drawing.Point(463, 392);
-            this.tintaverdeTextBox.Name = "tintaverdeTextBox";
-            this.tintaverdeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.tintaverdeTextBox.TabIndex = 59;
-            // 
-            // catalisadormassaLabel
-            // 
-            catalisadormassaLabel.AutoSize = true;
-            catalisadormassaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            catalisadormassaLabel.Location = new System.Drawing.Point(321, 428);
-            catalisadormassaLabel.Name = "catalisadormassaLabel";
-            catalisadormassaLabel.Size = new System.Drawing.Size(120, 16);
-            catalisadormassaLabel.TabIndex = 60;
-            catalisadormassaLabel.Text = "Catalizador Massa";
-            // 
-            // catalisadormassaTextBox
-            // 
-            this.catalisadormassaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "catalisadormassa", true));
-            this.catalisadormassaTextBox.Location = new System.Drawing.Point(463, 427);
-            this.catalisadormassaTextBox.Name = "catalisadormassaTextBox";
-            this.catalisadormassaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.catalisadormassaTextBox.TabIndex = 61;
-            // 
-            // tintapretaLabel
-            // 
-            tintapretaLabel.AutoSize = true;
-            tintapretaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tintapretaLabel.Location = new System.Drawing.Point(357, 467);
-            tintapretaLabel.Name = "tintapretaLabel";
-            tintapretaLabel.Size = new System.Drawing.Size(73, 16);
-            tintapretaLabel.TabIndex = 62;
-            tintapretaLabel.Text = "Tinta Preta";
-            // 
-            // tintapretaTextBox
-            // 
-            this.tintapretaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "tintapreta", true));
-            this.tintapretaTextBox.Location = new System.Drawing.Point(463, 466);
-            this.tintapretaTextBox.Name = "tintapretaTextBox";
-            this.tintapretaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.tintapretaTextBox.TabIndex = 63;
-            // 
-            // redutorLabel
-            // 
-            redutorLabel.AutoSize = true;
-            redutorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            redutorLabel.Location = new System.Drawing.Point(374, 509);
-            redutorLabel.Name = "redutorLabel";
-            redutorLabel.Size = new System.Drawing.Size(56, 16);
-            redutorLabel.TabIndex = 64;
-            redutorLabel.Text = "Redutor";
-            // 
-            // redutorTextBox
-            // 
-            this.redutorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "redutor", true));
-            this.redutorTextBox.Location = new System.Drawing.Point(463, 509);
-            this.redutorTextBox.Name = "redutorTextBox";
-            this.redutorTextBox.Size = new System.Drawing.Size(100, 20);
-            this.redutorTextBox.TabIndex = 65;
-            // 
-            // cidadeRJgradeLabel
-            // 
-            cidadeRJgradeLabel.AutoSize = true;
-            cidadeRJgradeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cidadeRJgradeLabel.Location = new System.Drawing.Point(333, 555);
-            cidadeRJgradeLabel.Name = "cidadeRJgradeLabel";
-            cidadeRJgradeLabel.Size = new System.Drawing.Size(113, 16);
-            cidadeRJgradeLabel.TabIndex = 66;
-            cidadeRJgradeLabel.Text = "Cidade RJ Grade";
-            // 
-            // cidadeRJgradeTextBox
-            // 
-            this.cidadeRJgradeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "cidadeRJgrade", true));
-            this.cidadeRJgradeTextBox.Location = new System.Drawing.Point(463, 548);
-            this.cidadeRJgradeTextBox.Name = "cidadeRJgradeTextBox";
-            this.cidadeRJgradeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cidadeRJgradeTextBox.TabIndex = 67;
-            // 
-            // disco80Label
-            // 
-            disco80Label.AutoSize = true;
-            disco80Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            disco80Label.Location = new System.Drawing.Point(345, 594);
-            disco80Label.Name = "disco80Label";
-            disco80Label.Size = new System.Drawing.Size(87, 16);
-            disco80Label.TabIndex = 68;
-            disco80Label.Text = "Disco Lixa 80";
-            // 
-            // disco80TextBox
-            // 
-            this.disco80TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtosBindingSource, "disco80", true));
-            this.disco80TextBox.Location = new System.Drawing.Point(463, 596);
-            this.disco80TextBox.Name = "disco80TextBox";
-            this.disco80TextBox.Size = new System.Drawing.Size(100, 20);
-            this.disco80TextBox.TabIndex = 69;
+            // btnCalcularAR
+            // 
+            this.btnCalcularAR.Location = new System.Drawing.Point(13, 598);
+            this.btnCalcularAR.Name = "btnCalcularAR";
+            this.btnCalcularAR.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcularAR.TabIndex = 124;
+            this.btnCalcularAR.Text = "Calcular";
+            this.btnCalcularAR.UseVisualStyleBackColor = true;
+            // 
+            // btnCalcular1519
+            // 
+            this.btnCalcular1519.Location = new System.Drawing.Point(83, 512);
+            this.btnCalcular1519.Name = "btnCalcular1519";
+            this.btnCalcular1519.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular1519.TabIndex = 125;
+            this.btnCalcular1519.Text = "button1";
+            this.btnCalcular1519.UseVisualStyleBackColor = true;
+            // 
+            // btnCalcular1722
+            // 
+            this.btnCalcular1722.Location = new System.Drawing.Point(179, 514);
+            this.btnCalcular1722.Name = "btnCalcular1722";
+            this.btnCalcular1722.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular1722.TabIndex = 126;
+            this.btnCalcular1722.Text = "button2";
+            this.btnCalcular1722.UseVisualStyleBackColor = true;
             // 
             // AvariaAR
             // 
@@ -2029,15 +2059,15 @@
             this.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(948, 742);
-            this.Controls.Add(this.pnlProdutos);
-            this.Controls.Add(this.btnCalcularAR);
             this.Controls.Add(this.btnCalcular1722);
+            this.Controls.Add(this.btnCalcular1519);
+            this.Controls.Add(this.btnCalcularAR);
+            this.Controls.Add(this.pnlProdutos);
             this.Controls.Add(this.pnlCheckFrente);
             this.Controls.Add(this.pnlCheckTraseira);
             this.Controls.Add(this.rbTraseira);
             this.Controls.Add(this.checkP);
             this.Controls.Add(this.checkCP);
-            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.rbDianteira);
             this.Controls.Add(this.rbLE);
             this.Controls.Add(this.rbLD);
@@ -2066,8 +2096,8 @@
             this.pnlCheckLE.PerformLayout();
             this.pnlProdutos.ResumeLayout(false);
             this.pnlProdutos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vnslourdesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnslourdesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2084,8 +2114,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsPesquisar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.Button btnCalcularAR;
-        private System.Windows.Forms.Button btnCalcular1722;
         private System.Windows.Forms.Panel pnlCheckFrente;
         private System.Windows.Forms.CheckBox check4Frente;
         private System.Windows.Forms.CheckBox check3Frente;
@@ -2101,7 +2129,6 @@
         private System.Windows.Forms.RadioButton rbTraseira;
         private System.Windows.Forms.CheckBox checkP;
         private System.Windows.Forms.CheckBox checkCP;
-        private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.RadioButton rbDianteira;
         private System.Windows.Forms.RadioButton rbLE;
         private System.Windows.Forms.RadioButton rbLD;
@@ -2190,5 +2217,9 @@
         private System.Windows.Forms.TextBox trincobTextBox;
         private System.Windows.Forms.TextBox fitagrossaTextBox;
         private System.Windows.Forms.TextBox fitafinaTextBox;
+        private System.Windows.Forms.Button btnTeste;
+        private System.Windows.Forms.Button btnCalcularAR;
+        private System.Windows.Forms.Button btnCalcular1519;
+        private System.Windows.Forms.Button btnCalcular1722;
     }
 }

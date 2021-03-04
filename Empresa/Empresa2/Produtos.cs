@@ -8,7 +8,16 @@ namespace Empresa2
 {
     public class Produtos
     {
-        
+        private double _chapa90;
+
+        public double _Chapa90
+        {
+            get => _chapa90;
+
+            set => _chapa90 = value;
+
+        }
+
         public double chapa90 = 279.00;
         public double chapa75 = 235.00;
         public double washprimer = 39.00;

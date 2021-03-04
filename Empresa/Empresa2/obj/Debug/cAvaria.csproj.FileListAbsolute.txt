@@ -118,3 +118,27 @@ C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\b
 C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\bin\Debug\MySql.Data.xml
 C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CopyComplete
 C:\Users\cleit\Downloads\Projeto\Projeto atualizado (Atual) 2\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\Empresa2.exe.config
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\Empresa2.exe
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\Empresa2.pdb
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\Ubiety.Dns.Core.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\Zstandard.Net.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\K4os.Compression.LZ4.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\K4os.Hash.xxHash.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\System.Buffers.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\System.Memory.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\ProjetoLourdes\Empresa\Empresa2\bin\Debug\System.Numerics.Vectors.dll
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.manutencao.resources
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.frmPesquisas.resources
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.frmPrincipal.resources
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.PesquisarAV.resources
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.Properties.Resources.resources
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\cAvaria.csproj.GenerateResource.cache
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CoreCompileInputs.cache
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\cAvaria.csproj.CopyComplete
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.exe
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.pdb
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\Empresa2.AvariaAR.resources
+C:\ProjetoLourdes\Empresa\Empresa2\obj\Debug\cAvaria.csprojAssemblyReference.cache

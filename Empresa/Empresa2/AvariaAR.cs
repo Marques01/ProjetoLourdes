@@ -11,1404 +11,205 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms.VisualStyles;
 using System.IO;
+using MySql;
+using MySqlX;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+
 namespace Empresa2
 {
+  
     public partial class AvariaAR : Form
     {
         string av = "O valor total da avaria foi de R$:";
-        
 
         Calcular1722 c1722 = new Calcular1722();
         CalcularArCondiconado car = new CalcularArCondiconado();
         CalcularDianteira_Traseira cdt = new CalcularDianteira_Traseira();
-        Calcular1519 c1519 = new Calcular1519();        
+        Calcular1519 c1519 = new Calcular1519();
+        Produtos P = new Produtos();
 
         OpenFileDialog openF = new OpenFileDialog();
 
-
         public AvariaAR()
         {
-
             InitializeComponent();
-
         }
 
-        private void button1_Click(object sender, EventArgs e) // Botão de nova avaria
+        public void Modelo_1519LD()
         {
+            check15LD.Visible = true; // Ativa a visiblidade do check15
 
+            check16LD.Visible = false; // Desativa o check16 Lado Direito
+
+            check17LD.Visible = false; // Desativa o check17 Lado Direito
         }
 
-
-
-        private void btnCalcular_Click(object sender, EventArgs e)
+        public void Modelo_1519LE()
         {
-            if (check3Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado do para choque dianteiro (3) PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Dianteiro_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
+            check18LE.Visible = false; // Desativa o check18 Lado Esquerdo
 
-            if (check3Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado do para choque dianteiro (3) CARROCERIA / PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Dianteiro_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check2Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/D - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check2Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira D/D - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check1Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da grade dianteira - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Grade_Dianteira_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor     
-            }
-
-            if (check1Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da grade dianteira - Carroceria Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Grade_Dianteira_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor     
-            }
-
-
-            // Traseira
-
-
-            if (check2Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da traseira 2 PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Traseira_Meio_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor  
-            }
-
-            if (check2Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da traseira 2 CARROCERIA PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Traseira_Meio_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor  
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check4Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da coluna traseira 1 - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da coluna traseira 1 - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da coluna traseira 3 - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da coluna traseira 3 - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/E - Carroceria / Pintura CHECK4
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado do para choque traseiro CHECK 5 Recuperado
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Traseiro_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/D - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado do para choque traseiro Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Traseiro_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/D Carroceria / pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-
-
-
-
-            // Lado Direito 1519
-
-            if (check0LD.Checked == false && check1LD.Checked.Equals(true) && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check1 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check1_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked.Equals(true) && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check2 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check2_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked.Equals(true) && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check3 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check3_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked.Equals(true) && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check4 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check4_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked.Equals(true) && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check5 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check5_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked.Equals(true) && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check6 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check6_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked.Equals(true)
-               && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-               && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-               && check3Frente.Checked == false && check4Frente.Checked == false
-               && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-               && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-               && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-               && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check7 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check7_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked.Equals(true) && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check8 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check8_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked.Equals(true) && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check9 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check9_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked.Equals(true) && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check10 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check10_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked.Equals(true) && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check11 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check11_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked.Equals(true) && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check12 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check12_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked.Equals(true)
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check13 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check13_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked.Equals(true) && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check14 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check14_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked.Equals(true) && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check15 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check15_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            // Lado Esquerdo 1519
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                            && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                            && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                            && check3Frente.Checked == false && check4Frente.Checked == false
-                            && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked.Equals(true) && check2LE.Checked == false
-                            && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                            && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                            && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check1 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check1LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked.Equals(true)
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check2 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check2LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked.Equals(true) && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check3 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check3LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                            && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                            && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                            && check3Frente.Checked == false && check4Frente.Checked == false
-                            && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                            && check3LE.Checked == false && check4LE.Checked.Equals(true) && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                            && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                            && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check4 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check4LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked.Equals(true) && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check5 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check5LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked.Equals(true) && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check6 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check6LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked.Equals(true) && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check7 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check7LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked.Equals(true) && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check8 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check8LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked.Equals(true)
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check9 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check9LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked.Equals(true) && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check10 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check10LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked.Equals(true) && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check11 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check11LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked.Equals(true) && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check12 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check12LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked.Equals(true) && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check13 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check13LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked.Equals(true) && check15LE.Checked == false && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check14 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check14LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked.Equals(true) && check16LE.Checked == false
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check15 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check15LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked == false && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false
-                && check8LD.Checked == false && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false
-                && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false
-                && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false
-                && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false && check9LE.Checked == false
-                && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked.Equals(true)
-                && check17LE.Checked == false && check18LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // Valor cobrado somente com Check16 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1519.total_check16LE_1519(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check0LD.Checked.Equals(false) && check1LD.Checked == false && check2LD.Checked == false && check3LD.Checked == false && check4LD.Checked == false && check5LD.Checked == false && check6LD.Checked == false && check7LD.Checked == false && check8LD.Checked == false
-             && check9LD.Checked == false && check10LD.Checked == false && check11LD.Checked == false && check12LD.Checked == false && check13LD.Checked == false && check14LD.Checked == false && check15LD.Checked == false && check16LD.Checked == false
-             && check17LD.Checked == false && check1Frente.Checked == false && check2Frente.Checked == false
-                && check3Frente.Checked == false && check4Frente.Checked == false && check1Tr.Checked == false && check2Tr.Checked == false && check3Tr.Checked == false && check4Tr.Checked == false && check5Tr.Checked == false && check6Tr.Checked == false && check1LE.Checked == false && check2LE.Checked == false && check3LE.Checked == false && check4LE.Checked == false && check5LE.Checked == false && check6LE.Checked == false && check7LE.Checked == false && check8LE.Checked == false
-             && check9LE.Checked == false && check10LE.Checked == false && check11LE.Checked == false && check12LE.Checked == false && check13LE.Checked == false && check14LE.Checked == false && check15LE.Checked == false && check16LE.Checked == false && check17LE.Checked == false
-             && check18LE.Checked == false && check19LE.Checked == false && checkCP.Checked.Equals(true) && checkP.Checked == false && tsTxtModelo.Text.Equals("1519")) // coluna traseira esquerda CARROCERIA / PINTURA
-            {
-                MessageBox.Show(av + Math.Round(c1519.colunaTECP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
+            check19LE.Visible = false; // Desativa o check19 Lado Esquerdo
         }
 
-
-        private void btn2LD_CheckedChanged(object sender, EventArgs e) // Radio Button Lado Direito
+        public void Modelo_1722LD()
         {
+            check15LD.Visible = false; // Desativa a visiblidade do check15
 
-            AvariaAR.ActiveForm.Refresh();
+            check16LD.Visible = false; // Desativa a visiblidade do check16
 
-            if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se o Lado Direito estiver marcado e o modelo do carro for 1722 quando apertar enter muda a foto para Lado Direito do 1722 
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722; // Se o Lado Direito estiver marcado e o modelo for 1722 altera a imagem
-            }
-
-            if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
-            {
-
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes; //Se a traseira estiver macada e o modelo for 1519 a foto muda para 1519
-            }
-
-
-            if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se o lado direito estiver marcado e o modelo de carro for ar condicionado quando apertar enter a foto muda para direita do ar condicionado
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado1;
-            }
-
-            // =============== Dianteira =================== 
-
-            foreach (Component Controls in pnlCheckFrente.Controls)
-            {
-                (Controls as CheckBox).Checked = false; // Desmarca todas as checkbox da traseira
-            }
-
-            pnlCheckFrente.Visible = false; // Desativa a visibilidade do painel com os check da dianteira           
-
-
-            // =============== Lado Esquerdo ===================                                            
-
-            foreach (Component Controls in pnlCheckLE.Controls)
-            {
-                (Controls as CheckBox).Checked = false; // Desmarca todas as checkbox do lado direito
-            }
-
-            pnlCheckLE.Visible = false; // Desativa o painel com os Checks do Lado Esquerdo
-
-
-            // =============== Traseira ===================
-
-            foreach (Component Controls in pnlCheckTraseira.Controls)
-            {
-                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
-            }
-
-            pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
-
+            check17LD.Visible = false; // Desativa a visiblidade do check17
         }
 
-        private void rbLE_CheckedChanged(object sender, EventArgs e) // Radio Button lado esquerdo
+        public void Selected_Traseira()
         {
-            AvariaAR.ActiveForm.Refresh();
+            pnlCheckTraseira.Visible = true; // Ativa a visibilidade do painel com os check da traseira                            
 
-            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se o número de ordem for modelo 1722 e o lado esquerdo estiver selecionado altera a imagem para 1722
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722; // Se o Lado Direito estiver marcado e o modelo for 1722 altera a imagem
-            }
-
-            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se o número de ordem for modelo Ar condicionado e o lado esquerdo estiver selecionado altera a imagem para Ar condicionado
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado1; // Esquerda Sem número
-
-
-            }
-
-            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes; // Esquerda Sem número
-            }
-
-
-            if (rbLE.Checked.Equals(true)) // Quando Lado esquerdo estiver marcado 
-            {
-
-                // =============== Dianteira =================== 
-
-                foreach (Component Controls in pnlCheckFrente.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todas as checkbox da traseira
-                }
-
-                pnlCheckFrente.Visible = false; // Desativa a visibilidade do painel com os check da dianteira
-
-
-                // =============== Lado direito ===================                                            
-
-                foreach (Component Controls in pnlCheckLD.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todas as checkbox do lado direito
-                }
-
-                pnlCheckLD.Visible = false; // Desativa o painel com os Checks do Lado Direito                
-
-
-                // =============== Traseira ===================
-
-                foreach (Component Controls in pnlCheckTraseira.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
-                }
-
-                pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
-
-            }
-        }
-
-        private void rbDianteira_CheckedChanged(object sender, EventArgs e) // Radio button Dianteira
-        {            
-
-            if (rbDianteira.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se a frente estiver marcada e o modelo de carro for ar condicionado quando apertar enter a foto muda para frente do ar condicionado
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado1; // Frente ar condiconado sem numero
-
-                AvariaAR.ActiveForm.Refresh();
-            }
-
-            if (rbDianteira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se a frente estiver marcada e o modelo do carro for 1722 quando apertar enter muda a foto para frente do 1722 
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722; // Se a frente estiver marcada e o modelo for 1722 altera a imagem
-
-                AvariaAR.ActiveForm.Refresh();
-            }
-
-            if (rbDianteira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes; // Se a dianteira estiver marcada e o modelo for 1519 a foto muda para 1519
-
-                AvariaAR.ActiveForm.Refresh();
-            }
-
-
-            // =============== Traseira ===================
-
-            foreach (Component Controls in pnlCheckTraseira.Controls)
-            {
-                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
-            }
-
-            pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
-
-            // =============== Lado direito ===================
+            // =================== Lado direito ===================
 
             foreach (Component Controls in pnlCheckLD.Controls)
             {
-                (Controls as CheckBox).Checked = false; //Desmarca todas as check box do Lado Direito
-
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado direito
             }
 
+            pnlCheckLD.Visible = false; // Desativa a visibilidade dos Checks do Lado direito
 
-            pnlCheckLD.Visible = false;
-
-            // =============== Lado Esquerdo =======================
+            // =================== Lado Esquerdo ===================
 
             foreach (Component Controls in pnlCheckLE.Controls)
             {
-                (Controls as CheckBox).Checked = false; // Desmarca todas as checkbox do Lado Esquerdo
-
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado Esquerdo
             }
+
+            pnlCheckLE.Visible = false; // Desativa a visiblidade dos check do Lado Esquerdo
+
+            // =================== Dianteira ===================
+
+            foreach (Component Controls in pnlCheckFrente.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
+            }
+
+            pnlCheckFrente.Visible = false; // Desativa a visiblidade do painel da dianteira com os checks
+
+            AvariaAR.ActiveForm.Update();
+        }
+
+        public void Selecionado_Lado_Direito()
+        {
+            pnlCheckLD.Visible = true; // Visibilidade do painel dos Checks ativada                              
+
+
+            // =================== Lado Esquerdo ===================
+
+            foreach (Component Controls in pnlCheckLE.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado Esquerdo
+            }
+
+            pnlCheckLE.Visible = false; // Desativa o painel com os check do Lado Esquerdo
+
+            // =================== Dianteira ===================
+
+            foreach (Component Controls in pnlCheckFrente.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
+            }
+
+            pnlCheckFrente.Visible = false; // Desativa a visiblidade do painel da dianteira com os checks
+
+            // =================== Traseira ===================
+
+            foreach (Component Controls in pnlCheckTraseira.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
+            }
+
+            pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
+
+            AvariaAR.ActiveForm.Update();
+        }
+
+        public void Selecionado_Lado_Esquerdo()
+        {
+            pnlCheckLE.Visible = true; // Ativa a visibilidade do painel com os check Lado Esquerdo
+
+            // =================== Lado direito ===================
+
+            foreach (Component Controls in pnlCheckLD.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado direito
+            }
+
+            pnlCheckLD.Visible = false; // Desativa o painel responsável pela exibição dos checks
+
+            // =================== Dianteira ===================
+
+            foreach (Component Controls in pnlCheckFrente.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
+            }
+
+            pnlCheckFrente.Visible = false; // Desativa a visiblidade do painel da dianteira com os checks
+
+            // =================== Traseira ===================
+
+            foreach (Component Controls in pnlCheckTraseira.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
+            }
+
+            pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
+
+            AvariaAR.ActiveForm.Update();
+        }
+
+        public void Selecionado_Dianteira()
+        {
+            pnlCheckFrente.Visible = true;
+
+
+            pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
+
+
+            pnlCheckLD.Visible = false; // Desativa a visibilidade dos Checks do Lado direito
 
             pnlCheckLE.Visible = false; // Desativa a visibilidade do painel com os check do Lado Esquerdo
+
+
+            // =================== Lado direito ===================
+
+            foreach (Component Controls in pnlCheckLD.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado direito
+            }
+
+            // =================== Lado Esquerdo ===================
+
+            foreach (Component Controls in pnlCheckLE.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado Esquerdo
+            }
+
+            // =================== Traseira ===================
+
+            foreach (Component Controls in pnlCheckTraseira.Controls)
+            {
+                (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
+            }
+
+            AvariaAR.ActiveForm.Update();
+
         }
 
-        private void rbTraseira_CheckedChanged(object sender, EventArgs e)
-        {
-
-            AvariaAR.ActiveForm.Refresh();
-
-            if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se a traseira estiver marcada e o modelo do carro for 1722 quando apertar enter muda a foto para traseira do 1722 
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722; // Se a traseira estiver marcada e o modelo for 1722 altera a imagem
-            }
-
-            if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se a traseira estiver marcada e o modelo de carro for ar condicionado quando apertar enter a foto muda para traseira do ar condicionado)
-            {
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado1; // Se o a traseira estiver marcada e o modelo for Ar condicionado altera a imagem
-
-            }
-
-            if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
-            {
-
-                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes; //Se a traseira estiver macada e o modelo for 1519 a foto muda para 1519
-            }
-
-            if (rbTraseira.Checked.Equals(true))
-            {
-
-                // =============== Lado direito ===================
-
-                foreach (Component Controls in pnlCheckLD.Controls)
-                {
-                    (Controls as CheckBox).Checked = false;
-                }
-
-
-                pnlCheckLD.Visible = false; // Desativa a vibilidade  do painel com os Check do Lado Direito
-
-
-                // =============== Lado Esquerdo =======================
-
-                foreach (Component Controls in pnlCheckLE.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do lado esquerdo
-                }
-
-
-                pnlCheckLE.Visible = false; //Desativa a visibilidade do painel com os Check Lado Esquerdo
-
-
-                // =============== Dianteira =======================
-
-                foreach (Component Controls in pnlCheckFrente.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
-                }
-
-                pnlCheckFrente.Visible = false; // Desativa o painel com os check da dianteira
-
-            }
-        }
-
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            AvariaAR.ActiveForm.Close();
-        }
-
-        private void btnCalcular1722_Click(object sender, EventArgs e)
-        {
-            if (check3Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado do para choque dianteiro (3) PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Dianteiro_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado do para choque dianteiro (3) CARROCERIA / PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Dianteiro_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check2Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/D - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check2Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira D/D - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check1Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da grade dianteira - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Grade_Dianteira_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor     
-            }
-
-            if (check1Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da grade dianteira - Carroceria Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Grade_Dianteira_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor     
-            }
-
-
-            // Traseira
-
-
-            if (check2Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da traseira 2 PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Traseira_Meio_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor  
-            }
-
-            if (check2Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da traseira 2 CARROCERIA PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Traseira_Meio_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor  
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check4Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da coluna traseira 1 - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da coluna traseira 1 - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da coluna traseira 3 - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da coluna traseira 3 - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/E - Carroceria / Pintura CHECK4
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado do para choque traseiro CHECK 5 Recuperado
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Traseiro_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/D - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado do para choque traseiro Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Traseiro_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/D Carroceria / pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            // Lado Direito 1722
-
-            if (check0LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado coluna traseira direita CARROCERIA / PINTURA
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check0_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com Check1 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check1_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check2LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com Check2 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check2_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com Check3 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check3_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com Check4 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check4_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com Check5 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check5_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com Check6 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check6_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check7LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check7 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check7_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check8LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check8 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check8_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check9LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check9 Lado Direito selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check9_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check10LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check10 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check10_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check11LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check11 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check11_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check12LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check12 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check12_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check13LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check13 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check13_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check14LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check14 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check14_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check15LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check15 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check15_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check16LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check16 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check16_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check17LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check17 selecionado
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check17_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            // Lado Esquerdo 1722
-
-
-            if (check1LE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check1 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check1LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check2LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check2 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check2LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check3 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check3LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4LE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check17 selecionado // Valor cobrado somente com o check4 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check4LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check5 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check5LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check6 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check6LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check7LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check7 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check7LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check8LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check8 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check8LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check9LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check9 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check9LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check10LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check10 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check10LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check11LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check11 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check11LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check12LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check12 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check12LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check13LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check13 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check13LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-
-            }
-
-            if (check14LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check14 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check14LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check15LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check15 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check15LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check16LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check16 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check16LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check17LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check17 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check17LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check18LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check18 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check18LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check19LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Valor cobrado somente com o check19 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(c1722.total_check19LE_1722(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-        }
 
         private void AvariaAR_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'vnslourdesDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.vnslourdesDataSet.produtos);
             // TODO: esta linha de código carrega dados na tabela 'vnslourdesDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
-            this.produtosTableAdapter.Fill(this.vnslourdesDataSet.produtos);                       
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-            if (check3Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado do para choque dianteiro (3) PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Dianteiro_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado do para choque dianteiro (3) CARROCERIA / PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Dianteiro_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check2Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/D - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check2Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira D/D - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor                
-            }
-
-            if (check1Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da grade dianteira - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Grade_Dianteira_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor     
-            }
-
-            if (check1Frente.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da grade dianteira - Carroceria Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Grade_Dianteira_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor     
-            }
-
-
-            // Traseira
-
-
-            if (check2Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da traseira 2 PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Traseira_Meio_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor  
-            }
-
-            if (check2Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da traseira 2 CARROCERIA PINTURA
-            {
-                MessageBox.Show(av + Math.Round(cdt.Traseira_Meio_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor  
-            }
-
-            if (check4Frente.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira D/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_DD_DE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            if (check4Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/E - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da coluna traseira 1 - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da coluna traseira 1 - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da coluna traseira 3 - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da coluna traseira 3 - Carroceria / Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Coluna_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/E - Carroceria / Pintura CHECK4
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado do para choque traseiro CHECK 5 Recuperado
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Traseiro_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/D - Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5Tr.Checked.Equals(true) && checkP.Checked.Equals(true)) // Valor cobrado do para choque traseiro Pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Parachoque_Traseiro_P(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6Tr.Checked.Equals(true) && checkCP.Checked.Equals(true)) // Valor cobrado da ponteira traseira T/D Carroceria / pintura
-            {
-                MessageBox.Show(av + Math.Round(cdt.Ponteira_TD_TE_CP(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-
-            // Lado Esquerdo Ar condiconado
-
-
-            if (check1LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check1 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check1LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check2LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check2 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check2LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check3 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check3LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check4 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check4LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check5 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check5LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check6 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check6LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check7LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check7 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check7LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check8LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check8 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check8LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check9LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check9 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check9LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check10LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check10 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check10LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check11LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check11 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check11LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check12LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check12 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check12LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check13LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check13 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check13LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check14LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check14 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check14LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check15LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check15 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check15LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check16LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check16 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check16LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check17LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check17 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check17LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check18LE.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check18 Lado Esquerdo
-            {
-                MessageBox.Show(av + Math.Round(car.total_check18LE_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            // Lado Direito Ar condiconado            
-
-            if (check0LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check0 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check0_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check1LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check1 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check1_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check2LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check2 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check2_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check3LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check3 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check3_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check4LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check4 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check4_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check5LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check5 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check5_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check6LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check6 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check6_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check7LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check7 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check7_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check8LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check8 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check8_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check9LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check9 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check9_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check10LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check10 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check10_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check11LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check11 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check11_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check12LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check12 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check12_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check13LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check13 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check13_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check14LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check14 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check14_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check15LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check15 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check15_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check16LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check16 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check16_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-
-            if (check17LD.Checked.Equals(true) && checkCP.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Valor cobrado somente com o check17 Lado Direito
-            {
-                MessageBox.Show(av + Math.Round(car.total_check17_ArCondicionado(), 2), "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); // Caixa de mensagem com o valor
-            }
-        }
-
-        private void btnPesquisarAvaria_Click(object sender, EventArgs e)
-        {
-            PesquisarAV pesav = new PesquisarAV();
-
-            pesav.ShowDialog();
+            this.produtosTableAdapter.Fill(this.vnslourdesDataSet.produtos);
+                      
         }
 
         private void tsClose_Click(object sender, EventArgs e)
@@ -1457,7 +258,7 @@ namespace Empresa2
 
                 btnCalcular1722.Visible = false; // Desativa a visibilidade do botão calcular 1722
 
-                btnCalcular.Visible = false; // Desativa a visibilidade do botão calcular 1519          
+                btnCalcular1519.Visible = false; // Desativa a visibilidade do botão calcular 1519          
             }
 
             if (tsTxtModelo.Text.Equals("1722"))
@@ -1466,7 +267,7 @@ namespace Empresa2
 
                 btnCalcular1722.Visible = true; // Ativa a visibilidade do botão calcular 1722
 
-                btnCalcular.Visible = false; // Desativa a visibilidade do botão calcular 1519
+                btnCalcular1519.Visible = false; // Desativa a visibilidade do botão calcular 1519
 
             }
 
@@ -1476,87 +277,26 @@ namespace Empresa2
 
                 btnCalcular1722.Visible = false; // Desativa a visibilidade do botão calcular 1722
 
-                btnCalcular.Visible = true; // Ativa a visibilidade do botão calcular 1519
+                btnCalcular1519.Visible = true; // Ativa a visibilidade do botão calcular 1519
 
             }
 
             if (rbTraseira.Checked.Equals(true)) // Se o botão da traseira estiver marcado
             {
-
-                pnlCheckTraseira.Visible = true; // Ativa a visibilidade do painel com os check da traseira                            
-
-
-                // =================== Lado direito ===================
-
-                foreach (Component Controls in pnlCheckLD.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado direito
-                }
-
-                pnlCheckLD.Visible = false; // Desativa a visibilidade dos Checks do Lado direito
-
-                // =================== Lado Esquerdo ===================
-
-                foreach (Component Controls in pnlCheckLE.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado Esquerdo
-                }
-
-                pnlCheckLE.Visible = false; // Desativa a visiblidade dos check do Lado Esquerdo
-
-                // =================== Dianteira ===================
-
-                foreach (Component Controls in pnlCheckFrente.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
-                }
-
-                pnlCheckFrente.Visible = false; // Desativa a visiblidade do painel da dianteira com os checks
-
-
+                Selected_Traseira();                
             }
 
             if (rbLD.Checked.Equals(true)) // Se o botao lado direito estiver marcado
             {
-                pnlCheckLD.Visible = true; // Visibilidade do painel dos Checks ativada                               
-
-
-                // =================== Lado Esquerdo ===================
-
-                foreach (Component Controls in pnlCheckLE.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado Esquerdo
-                }
-
-                pnlCheckLE.Visible = false; // Desativa o painel com os check do Lado Esquerdo
-
-                // =================== Dianteira ===================
-
-                foreach (Component Controls in pnlCheckFrente.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
-                }
-
-                pnlCheckFrente.Visible = false; // Desativa a visiblidade do painel da dianteira com os checks
-
-                // =================== Traseira ===================
-
-                foreach (Component Controls in pnlCheckTraseira.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
-                }
-
-                pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
-
-
+                Selecionado_Lado_Direito();
             }
 
 
-            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se o lado esquerdo estiver marcado e o modelo de carro for ar condicionado quando apertar enter a foto muda para esquerda do ar condicionado
+            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se o lado esquerdo estiver marcado e o modelo de carro for ar condicionado
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Lado_Esquerdo1;
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
 
                 foreach (Component Controls in pnlCheckLE.Controls)
                 {
@@ -1566,57 +306,23 @@ namespace Empresa2
 
             if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
             {
-
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Lado_Esquerdo; //Se a traseira estiver macada e o modelo for 1519 a foto muda para 1519
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
 
-                check18LE.Visible = false; // Desativa o check18 Lado Esquerdo
-
-                check19LE.Visible = false; // Desativa o check19 Lado Esquerdo
+                Modelo_1519LE();
             }
-
-
 
             if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se o Lado Esquerdo estiver marcado e o modelo do carro for 1722 quando apertar enter muda a foto para Lado Esquerdo do 1722 
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Lado_Esquerdo; // Se o Lado Direito estiver marcado e o modelo for 1722 altera a imagem
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
             }
 
             if (rbLE.Checked.Equals(true)) // Exibide o lado Esquerdo
             {
-
-                pnlCheckLE.Visible = true; // Ativa a visibilidade do painel com os check Lado Esquerdo
-
-                // =================== Lado direito ===================
-
-                foreach (Component Controls in pnlCheckLD.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado direito
-                }
-
-                pnlCheckLD.Visible = false; // Desativa o painel responsável pela exibição dos checks
-
-                // =================== Dianteira ===================
-
-                foreach (Component Controls in pnlCheckFrente.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da dianteira
-                }
-
-                pnlCheckFrente.Visible = false; // Desativa a visiblidade do painel da dianteira com os checks
-
-                // =================== Traseira ===================
-
-                foreach (Component Controls in pnlCheckTraseira.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
-                }
-
-                pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
-
+                Selecionado_Lado_Esquerdo();
             }
 
             if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
@@ -1624,7 +330,7 @@ namespace Empresa2
 
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Traseira; //Se a traseira estiver macada e o modelo for 1519 a foto muda para 1519
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();                                
             }
 
 
@@ -1633,7 +339,7 @@ namespace Empresa2
 
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Frente; //Se a dianteira estiver macada e o modelo for 1519 a foto muda para 1519
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
             }
 
 
@@ -1641,7 +347,7 @@ namespace Empresa2
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Frente1;
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
             }
 
 
@@ -1649,7 +355,7 @@ namespace Empresa2
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Frente; // Se a frente estiver marcada e o modelo for 1722 altera a imagem
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
             }
 
 
@@ -1657,7 +363,7 @@ namespace Empresa2
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Traseira1;
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
 
             }
 
@@ -1666,7 +372,7 @@ namespace Empresa2
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Traseira; // Se a traseira estiver marcada e o modelo for 1722 altera a imagem
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
             }
 
 
@@ -1674,7 +380,7 @@ namespace Empresa2
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Lado_Direito1;
 
-                AvariaAR.ActiveForm.Refresh();
+                AvariaAR.ActiveForm.Update();
 
                 foreach (Component Controls in pnlCheckLD.Controls)
                 {
@@ -1686,67 +392,25 @@ namespace Empresa2
             {
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Lado_Direito; // Se o Lado Direito estiver marcado e o modelo for 1722 altera a imagem
 
-                AvariaAR.ActiveForm.Refresh();
+                Modelo_1722LD();
 
-                check15LD.Visible = false; // Desativa a visiblidade do check15
-
-                check16LD.Visible = false; // Desativa a visiblidade do check16
-
-                check17LD.Visible = false; // Desativa a visiblidade do check17
+                AvariaAR.ActiveForm.Update();
             }
 
 
             if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
             {
-
                 AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Lado_Direito; //Se o lado Direito estiver marcado e o modelo for 1519 a foto muda para 1519
 
-                AvariaAR.ActiveForm.Refresh();
-
-                check15LD.Visible = true; // Ativa a visiblidade do check15
-
-                check16LD.Visible = false; // Desativa o check16 Lado Direito
-
-                check17LD.Visible = false; // Desativa o check17 Lado Direito
+                Modelo_1519LD();
+               
+                AvariaAR.ActiveForm.Update();
             }
 
 
             if (rbDianteira.Checked.Equals(true)) // Se o botao da dianteira estiver marcado
             {
-
-                pnlCheckFrente.Visible = true;
-
-
-                pnlCheckTraseira.Visible = false; // Desativa a visibilidade com os check da traseira
-
-
-                pnlCheckLD.Visible = false; // Desativa a visibilidade dos Checks do Lado direito
-
-                pnlCheckLE.Visible = false; // Desativa a visibilidade do painel com os check do Lado Esquerdo
-
-
-                // =================== Lado direito ===================
-
-                foreach (Component Controls in pnlCheckLD.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado direito
-                }
-
-                // =================== Lado Esquerdo ===================
-
-                foreach (Component Controls in pnlCheckLE.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox do Lado Esquerdo
-                }
-
-                // =================== Traseira ===================
-
-                foreach (Component Controls in pnlCheckTraseira.Controls)
-                {
-                    (Controls as CheckBox).Checked = false; // Desmarca todos os checkbox da traseira
-                }
-
-
+                Selecionado_Dianteira();
             }
         }
 
@@ -1767,22 +431,6 @@ namespace Empresa2
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             pnlProdutos.Visible = false;            
-        }
-
-        private void produtosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.produtosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.vnslourdesDataSet);
-
-        }
-
-        private void produtosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.produtosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.vnslourdesDataSet);
-
         }
 
         private void btnSalvarProdutos_Click(object sender, EventArgs e)
@@ -1822,6 +470,120 @@ namespace Empresa2
             {
                 checkCP.Enabled = true; // Senão o check de carroceria pintura fica habilitado 
             }
+        }
+
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+                        
+        }
+
+        private void rbLD_CheckedChanged(object sender, EventArgs e) // Radio Button Lado Direito
+        {            
+            if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se o Lado Direito estiver marcado e o modelo do carro for 1722 quando apertar enter muda a foto para Lado Direito do 1722 
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Lado_Direito; // Se o Lado Direito estiver marcado e o modelo for 1722 altera a imagem
+
+                Selecionado_Lado_Direito();
+
+                Modelo_1722LD();
+            }
+
+            if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Lado_Direito; //Se a traseira estiver macada e o modelo for 1519 a foto muda para 1519
+
+                Selecionado_Lado_Direito();
+            }
+
+
+            if (rbLD.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se o lado direito estiver marcado e o modelo de carro for ar condicionado quando apertar enter a foto muda para direita do ar condicionado
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Lado_Direito1;
+
+                Selecionado_Lado_Direito();
+            }
+
+            Selecionado_Lado_Direito();
+        }
+
+        private void rbLE_CheckedChanged(object sender, EventArgs e) // Radio Button Lado Esquerdo
+        {
+            
+            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se o número de ordem for modelo 1722 e o lado esquerdo estiver selecionado altera a imagem para 1722
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Lado_Esquerdo; // Se o Lado Direito estiver marcado e o modelo for 1722 altera a imagem
+
+                Selecionado_Lado_Esquerdo();
+            }
+
+            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se o número de ordem for modelo Ar condicionado e o lado esquerdo estiver selecionado altera a imagem para Ar condicionado
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Lado_Esquerdo1; // Esquerda Sem número
+
+                Selecionado_Lado_Esquerdo();
+            }
+
+            if (rbLE.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Lado_Esquerdo; // Esquerda Sem número
+
+                Selecionado_Lado_Esquerdo();
+            }
+
+
+            Selecionado_Lado_Esquerdo();
+        }
+
+        private void rbDianteira_CheckedChanged(object sender, EventArgs e) // Radio Button Dianteira
+        {
+            if (rbDianteira.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se a frente estiver marcada e o modelo de carro for ar condicionado quando apertar enter a foto muda para frente do ar condicionado
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Frente1; // Frente ar condiconado sem numero
+
+                Selecionado_Dianteira();
+            }
+
+            if (rbDianteira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se a frente estiver marcada e o modelo do carro for 1722 quando apertar enter muda a foto para frente do 1722 
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Frente; // Se a frente estiver marcada e o modelo for 1722 altera a imagem
+
+                Selecionado_Dianteira();
+            }
+
+            if (rbDianteira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Frente; // Se a dianteira estiver marcada e o modelo for 1519 a foto muda para 1519
+
+                Selecionado_Dianteira();
+            }
+
+            Selecionado_Dianteira();
+        }
+
+        private void rbTraseira_CheckedChanged(object sender, EventArgs e)
+        {            
+            if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1722")) // Se a traseira estiver marcada e o modelo do carro for 1722 quando apertar enter muda a foto para traseira do 1722 
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1722_Traseira; // Se a traseira estiver marcada e o modelo for 1722 altera a imagem
+
+                Selected_Traseira();
+            }
+
+            if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("Ar condicionado")) // Se a traseira estiver marcada e o modelo de carro for ar condicionado quando apertar enter a foto muda para traseira do ar condicionado)
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Ar_condicionado_Traseira1; // Se o a traseira estiver marcada e o modelo for Ar condicionado altera a imagem
+
+                Selected_Traseira();
+            }
+
+            if (rbTraseira.Checked.Equals(true) && tsTxtModelo.Text.Equals("1519"))
+            {
+                AvariaAR.ActiveForm.BackgroundImage = global::Empresa2.Properties.Resources._1519Lourdes_Traseira; //Se a traseira estiver macada e o modelo for 1519 a foto muda para 1519
+
+                Selected_Traseira();
+            }
+
+            Selected_Traseira();
         }
     }
 }

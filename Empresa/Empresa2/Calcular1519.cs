@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 namespace Empresa2
 {
     public class Calcular1519: Produtos
-    {
-        
+    {        
+        public double totaltesteprop()
+        {
+
+            return _Chapa90;
+        }
         public double total_check1_1519()
         {
             double total_check1_1519 = (chapa90 / 2) + (0.2 * chapelco) + (0.2 * washprimer) + (0.5 * catalizador) + (0.3 * papel) + (0.3 * fitagrossa) + (0.2 * duplaface) + capsula + faixarefletiva;

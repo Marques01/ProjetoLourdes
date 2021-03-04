@@ -538,9 +538,7 @@ namespace Empresa2
 
             txtData.Enabled = false;
 
-            txtAvariaA.Clear();
-
-            combNordem.SelectedItem.Equals("");
+            txtAvariaA.Clear();            
 
             txtModelo.Clear();
 
